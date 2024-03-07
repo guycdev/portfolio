@@ -41,7 +41,13 @@ const NodeModal = ({ isOpen, onClose, data }: NodeModalProps) => {
                   </div>
                   <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
                   <div className="flex flex-col gap-10">
-                    <Image src={data.img} className="rounded" />
+                    {data.img && (
+                      <Image
+                        src={data.img}
+                        className="rounded"
+                        alt="image alt"
+                      />
+                    )}
                     <Marquee autoFill>
                       {data.icons.map((icon, index) => (
                         <Icon key={index} as={icon} boxSize={12} mx={8} />

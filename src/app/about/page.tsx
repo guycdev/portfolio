@@ -1,17 +1,10 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { useState } from "react";
 import Flow from "./(components)/Flow";
 import HomeInformation from "./(components)/HomeInformation";
 import { NodeType } from "@/utils/interfaces";
-
-export const SetFlowContext = createContext<
-  | {
-      setSelectedFlow: React.Dispatch<React.SetStateAction<NodeType>>;
-      selectedFlow: string;
-    }
-  | undefined
->(undefined);
+import { SetFlowContext } from "@/context/SetFlowContext";
 
 const Home = () => {
   const [selectedFlow, setSelectedFlow] = useState<NodeType>("experienceNode");

@@ -1,7 +1,6 @@
-import { useContext } from "react";
-import { SetFlowContext } from "../page";
 import { NodeType } from "@/utils/interfaces";
 import { twMerge } from "tailwind-merge";
+import { useSetFlowContext } from "@/context/SetFlowContext";
 
 interface FlowNavLinkProps {
   label: string;
@@ -10,9 +9,7 @@ interface FlowNavLinkProps {
 }
 
 const FlowNavLink = ({ label, value, className }: FlowNavLinkProps) => {
-  const context = useContext(SetFlowContext);
-
-  if (!context) return;
+  const context = useSetFlowContext();
 
   const { setSelectedFlow, selectedFlow } = context;
 

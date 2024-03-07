@@ -1,12 +1,4 @@
-import ReactFlow, {
-  MiniMap,
-  Background,
-  Node,
-  Edge,
-  NodeTypes,
-  ControlButton,
-  Controls,
-} from "reactflow";
+import ReactFlow, { Background, Node, Edge, NodeTypes } from "reactflow";
 import ExperienceNode from "./nodes/ExperienceNode";
 import EducationNode from "./nodes/EducationNode";
 import "reactflow/dist/style.css";
