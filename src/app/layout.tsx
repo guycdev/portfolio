@@ -25,6 +25,7 @@ export default function RootLayout({
           innerScale={1}
           outerScale={2}
           outerAlpha={0}
+          /**@ts-ignore */
           hasBlendMode={true}
           innerStyle={{
             backgroundColor: "#f1f5f9",
