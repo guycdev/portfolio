@@ -34,9 +34,9 @@ export default function RootLayout({
             border: "3px solid #64748b",
           }}
         />
-        <div className="flex h-screen p-2  overflow-hidden">
+        <div className="flex h-screen   overflow-hidden">
           <motion.div
-            className="w-screen flex-col  rounded-md p-1 overflow-hidden"
+            className="w-screen flex-col   p-1 overflow-hidden"
             initial={{
               /**@ts-ignore */
               "--color-start": "#0000000", // Initial start color of the gradient
@@ -44,8 +44,8 @@ export default function RootLayout({
             }}
             animate={{
               /**@ts-ignore */
-              // "--color-start": "#334155", // Animate to this start color
-              // "--color-end": "#f3f4f6", // Animate to this end color
+              "--color-start": "#334155", // Animate to this start color
+              "--color-end": "#f3f4f6", // Animate to this end color
               transition: {
                 duration: 2,
                 delay: 1,

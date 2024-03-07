@@ -40,7 +40,7 @@ export function LampDemo() {
             opacity: 1,
             transition: {
               duration: 1,
-              delay: 3,
+              delay: 2,
             },
           }}
           className="absolute top-[170%] clickable"
@@ -93,7 +93,7 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        "relative flex h-[100%] flex-col items-center justify-center overflow-hidden bg-bg w-full rounded-md  z-0",
+        "relative flex h-[100%] flex-col items-center justify-center overflow-hidden bg-bg w-full   z-0",
         className
       )}
     >
