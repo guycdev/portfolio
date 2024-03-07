@@ -1,17 +1,20 @@
+import { BiMailSend } from "react-icons/bi";
 import { SignupFormDemo } from "./form";
 import {
   Modal,
   ModalOverlay,
   ModalContent,
   useDisclosure,
-  IconButton,
 } from "@chakra-ui/react";
 
 export const FormModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <IconButton aria-label="open contact form modal" onClick={onOpen} />
+      <BiMailSend
+        onClick={onOpen}
+        className="text-primary w-10 h-10 hover:text-accent clicker transition-all"
+      />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent className="border border-neutral-500 !rounded-2xl">

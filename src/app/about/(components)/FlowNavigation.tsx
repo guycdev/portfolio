@@ -2,7 +2,7 @@ import FlowNavLink from "./FlowNavLink";
 
 const FlowNavigation = () => {
   return (
-    <div className=" flex flex-col gap-8  py-5 w-[20%] border">
+    <div className=" flex flex-col gap-8  py-5 w-[20%]">
       <FlowNavLink label="Experience" value="experienceNode" />
       <FlowNavLink label="Education" value="educationNode" />
       <FlowNavLink label="Projects" value="projectNode" />

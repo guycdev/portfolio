@@ -49,10 +49,14 @@ const config: Config = {
           },
         },
       },
+      borderRadius: {
+        border: "12px",
+      },
       boxShadow: {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
         "glow-button":
-          "0px 0px 5px rgba(212, 29, 109, 0.7),0px 0px 10px rgba(212, 29, 109, 0.7), 0px 0px 15px rgba(212, 29, 109, 0.7),0px 0px 20px rgba(212, 29, 109, 0.7), 0px 0px 25px rgba(212, 29, 109, 0.7),0px 0px 30px rgba(212, 29, 109, 0.7), 0px 0px 35px rgba(212, 29, 109, 0.7);",
+          "0px 0px 5px #f1f5f9,0px 0px 10px #f1f5f9, 0px 0px 15px #f1f5f9,0px 0px 20px #f1f5f9, 0px 0px 25px #f1f5f9,0px 0px 30px #f1f5f9, 0px 0px 35px #f1f5f9;",
+        border: "0px 4px 16px rgba(235, 241, 255, 0.075);",
       },
     },
   },

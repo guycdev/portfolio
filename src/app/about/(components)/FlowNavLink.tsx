@@ -16,10 +16,10 @@ const FlowNavLink = ({ label, value, className }: FlowNavLinkProps) => {
   return (
     <h5
       className={twMerge(
-        "text-primary clickable hover:text-white hover:text-2xl transition-all duration-300 border-b border-primary w-fit",
+        "text-primary clickable hover:text-accent hover:w-44 hover:scale-120 hover:border-accent transition-all duration-300 border-b border-primary w-32 my-3",
         className,
         selectedFlow === value &&
-          "text-2xl text-secondary font-bold border-accent"
+          "scale-110 text-accent font-bold border-accent w-32"
       )}
       onClick={() =>
         setSelectedFlow !== undefined ? setSelectedFlow(value) : undefined

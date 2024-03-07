@@ -43,7 +43,7 @@ export function LampDemo() {
               delay: 2,
             },
           }}
-          className="absolute top-[170%] clickable"
+          className="absolute top-[170%] clickable cursor-none group"
         >
           <motion.div
             initial={{
@@ -69,10 +69,10 @@ export function LampDemo() {
               background:
                 "linear-gradient(to bottom right, var(--color-start), var(--color-end))",
             }}
-            className="p-0.5 rounded-full  transition-all clickable"
+            className="p-0.5 rounded-full transition-all clickable"
           >
-            <motion.div className="text-primary px-10 bg-bg py-2 font-normal rounded-3xl">
-              <p className=" bg-gradient-to-br from-secondary to-primary bg-clip-text ">
+            <motion.div className="text-primary px-10 bg-bg py-2 font-normal rounded-3xl group-hover:bg-accent transition-all group-hover:shadow-glow-button duration-500">
+              <p className=" bg-gradient-to-br from-secondary to-primary bg-clip-text group-hover:from-bg group-hover:to-bg transition-all">
                 My Work
               </p>
             </motion.div>
@@ -93,7 +93,7 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        "relative flex h-[100%] flex-col items-center justify-center overflow-hidden bg-bg w-full   z-0",
+        "relative flex h-[100%] rounded-border flex-col items-center justify-center overflow-hidden bg-bg w-full   z-0",
         className
       )}
     >

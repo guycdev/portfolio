@@ -5,16 +5,28 @@ import Flow from "./(components)/Flow";
 import HomeInformation from "./(components)/HomeInformation";
 import { NodeType } from "@/utils/interfaces";
 import { SetFlowContext } from "@/context/SetFlowContext";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [selectedFlow, setSelectedFlow] = useState<NodeType>("experienceNode");
 
   return (
     <SetFlowContext.Provider value={{ setSelectedFlow, selectedFlow }}>
-      <div className="flex  h-[100%] w-[100%]">
+      <motion.div
+        className="flex  h-[100%] w-[100%]"
+        // initial={{
+        //   opacity: 0,
+        // }}
+        // animate={{
+        //   opacity: 1,
+        //   transition: {
+        //     duration: 2,
+        //   },
+        // }}
+      >
         <HomeInformation />
         <Flow selectedFlow={selectedFlow} />
-      </div>
+      </motion.div>
     </SetFlowContext.Provider>
   );
 };

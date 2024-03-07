@@ -13,7 +13,6 @@ export const Meteors = ({
   const meteors = new Array(number || 20).fill(true);
 
   const [width, setWidth] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const getWidth = () => {
@@ -23,14 +22,6 @@ export const Meteors = ({
     };
 
     getWidth();
-
-    // const delayInterval = setInterval(() => {
-    //   setIsVisible(true);
-    // }, 2500);
-
-    // return () => {
-    //   clearInterval(delayInterval);
-    // };
   }, []);
 
   return width !== 0 ? (
@@ -43,7 +34,7 @@ export const Meteors = ({
           className
         )}
         style={{
-          top: 0,
+          top: "35px",
           left: Math.floor(Math.random() * (width - -width) + -width) + "px",
           animationDelay: Math.random() * (0.8 - 0.2) + 0.2 + "s",
           animationDuration: Math.floor(Math.random() * (10 - 2) + 2) + "s",
