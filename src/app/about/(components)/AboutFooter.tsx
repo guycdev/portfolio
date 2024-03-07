@@ -21,6 +21,7 @@ export const AboutFooter = () => {
 
   const iconArr = icons.map(({ link, icon: LinkIcon }, index) => (
     <MotionLink
+      key={link + index}
       href={link}
       initial={{
         opacity: 0,
@@ -31,7 +32,6 @@ export const AboutFooter = () => {
           delay: index - index * 0.5,
         },
       }}
-      key={index}
     >
       <LinkIcon className={iconStyles} />
     </MotionLink>
