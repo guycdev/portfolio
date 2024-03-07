@@ -1,9 +1,11 @@
-import { createContext, useContext } from "react";
+import React, { createContext, useContext } from "react";
 import { NodeType } from "@/utils/interfaces";
 
 type FlowContextType = {
   setSelectedFlow: React.Dispatch<React.SetStateAction<NodeType>>;
   selectedFlow: string;
+  attributeFilter: string;
+  setAttributeFilter: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const SetFlowContext = createContext<FlowContextType | undefined>(

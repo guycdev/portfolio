@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { JSX } from "react";
 import { BsTwitterX } from "react-icons/bs";
-import { LiaLinkedin } from "react-icons/lia";
 import { PiGithubLogo } from "react-icons/pi";
 import { SiDevpost } from "react-icons/si";
 import { motion } from "framer-motion";
+import { FaLinkedin } from "react-icons/fa";
 
 export const AboutFooter = () => {
   const iconStyles =
-    "text-primary w-10 h-10 hover:text-accent cursor-none transition-all";
+    "text-primary w-8 h-8 hover:text-accent cursor-none clickable transition-all hover:scale-110 duration-300";
 
   const icons = [
-    { link: "https://www.linkedin.com/feed/", icon: LiaLinkedin },
+    { link: "https://www.linkedin.com/feed/", icon: FaLinkedin },
     { link: "https://www.linkedin.com/feed/", icon: BsTwitterX },
     { link: "https://www.linkedin.com/feed/", icon: PiGithubLogo },
     { link: "https://www.linkedin.com/feed/", icon: SiDevpost },

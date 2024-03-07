@@ -9,9 +9,19 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   const [selectedFlow, setSelectedFlow] = useState<NodeType>("experienceNode");
+  const [attributeFilter, setAttributeFilter] = useState("");
+
+  console.log(attributeFilter);
 
   return (
-    <SetFlowContext.Provider value={{ setSelectedFlow, selectedFlow }}>
+    <SetFlowContext.Provider
+      value={{
+        setSelectedFlow,
+        selectedFlow,
+        attributeFilter,
+        setAttributeFilter,
+      }}
+    >
       <motion.div
         className="flex  h-[100%] w-[100%]"
         // initial={{

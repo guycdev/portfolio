@@ -40,7 +40,7 @@ export function LampDemo() {
             opacity: 1,
             transition: {
               duration: 1,
-              delay: 2,
+              delay: 2.5,
             },
           }}
           className="absolute top-[170%] clickable cursor-none group"

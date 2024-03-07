@@ -2,7 +2,6 @@ import React from "react";
 import FlowNavigation from "./FlowNavigation";
 import Link from "next/link";
 import { BiHome } from "react-icons/bi";
-import { FormModal } from "@/components/form-modal";
 import { IconButton } from "@chakra-ui/react";
 import { AboutFooter } from "./AboutFooter";
 import { motion } from "framer-motion";
@@ -10,7 +9,7 @@ import { motion } from "framer-motion";
 const HomeInformation = () => {
   return (
     <motion.div className=" h-[100%] w-[100%] flex-1 bg-bg p-3 rounded-s-md relative">
-      <Link href="/" className="absolute top-4 left-4 clicker cursor-none">
+      <Link href="/" className="absolute top-4 left-4 clickable">
         <IconButton
           icon={<BiHome />}
           aria-label="home page"
@@ -19,10 +18,10 @@ const HomeInformation = () => {
           _hover={{ color: "black", background: "white" }}
           borderRadius="50%"
           p={1}
-          border="1px solid gray"
+          border="1px solid gray "
         />
       </Link>
-      <div className="p-20">
+      <div className="p-20 flex flex-col justify-between h-[100%]">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
             <h2 className="text-primary text-5xl font-semibold">Guy Cohen</h2>
