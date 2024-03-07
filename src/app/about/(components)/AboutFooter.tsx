@@ -31,6 +31,7 @@ export const AboutFooter = () => {
           delay: index - index * 0.5,
         },
       }}
+      key={index}
     >
       <LinkIcon className={iconStyles} />
     </MotionLink>
