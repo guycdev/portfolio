@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 
 const HomeInformation = () => {
   return (
-    <motion.div className=" h-[100%] w-[100%] flex-1 bg-bg p-3 rounded-s-md relative">
-      <Link href="/" className="absolute top-4 left-4 clickable">
+    <motion.div className="relative h-[100%] w-[100%] flex-1 rounded-s-md bg-bg p-3">
+      <Link href="/" className="clickable absolute left-4 top-4">
         <IconButton
           icon={<BiHome />}
           aria-label="home page"
@@ -21,10 +21,10 @@ const HomeInformation = () => {
           border="1px solid gray "
         />
       </Link>
-      <div className="p-20 flex flex-col justify-between h-[100%]">
+      <div className="flex h-[100%] flex-col justify-between p-20">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
-            <h2 className="text-primary text-5xl font-semibold">Guy Cohen</h2>
+            <h2 className="text-5xl font-semibold text-primary">Guy Cohen</h2>
             <div className="flex flex-col gap-0">
               <p className="text-lg text-text ">Software Engineer</p>
               <p className="text-primary">
@@ -32,7 +32,7 @@ const HomeInformation = () => {
               </p>
             </div>
           </div>
-          <p className="text-text w-[75%] text-sm">
+          <p className="text-sm text-text">
             In 2020, I discovered the world of programming. Since then I have
             made it my mission to turn that passion into a career. Fast-forward
             to today and I am currently in the process of completing my Bachelor

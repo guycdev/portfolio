@@ -37,5 +37,5 @@ export const AboutFooter = () => {
     </MotionLink>
   ));
 
-  return <div className="flex my-5 justify-end gap-8">{iconArr}</div>;
+  return <div className="my-5 flex justify-end gap-8">{iconArr}</div>;
 };

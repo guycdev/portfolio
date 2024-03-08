@@ -9,14 +9,14 @@ type FlowContextType = {
 };
 
 export const SetFlowContext = createContext<FlowContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export const useSetFlowContext = (): FlowContextType => {
   const context = useContext(SetFlowContext);
   if (context === undefined) {
     throw new Error(
-      "useSetFlowContext must be used within a SetFlowContextProvider"
+      "useSetFlowContext must be used within a SetFlowContextProvider",
     );
   }
   return context;

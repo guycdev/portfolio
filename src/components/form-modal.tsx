@@ -13,11 +13,11 @@ export const FormModal = () => {
     <>
       <BiMailSend
         onClick={onOpen}
-        className="text-primary w-10 h-10 hover:text-accent clicker transition-all"
+        className="clicker h-10 w-10 text-primary transition-all hover:text-accent"
       />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent className="border border-neutral-500 !rounded-2xl">
+        <ModalContent className="!rounded-2xl border border-neutral-500">
           <SignupFormDemo />
         </ModalContent>
       </Modal>

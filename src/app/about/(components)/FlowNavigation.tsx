@@ -13,7 +13,7 @@ const FlowNavigation = () => {
   };
 
   return (
-    <div className=" flex flex-col gap-8  py-5 w-[20%]">
+    <div className="flex w-[20%] flex-col gap-8 py-5">
       {/* <div className="flex clickable">
         <Input
           type="text"

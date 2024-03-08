@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`h-screen bg-bg ${inter.className} overflow-hidden dark`}
+        className={`h-screen bg-bg ${inter.className} dark overflow-hidden`}
       >
         <AnimatedCursor
           clickables={[".clickable"]}
@@ -34,9 +34,9 @@ export default function RootLayout({
             border: "3px solid #64748b",
           }}
         />
-        <div className="flex h-screen p-2 overflow-hidden">
+        <div className="flex h-screen overflow-hidden p-2">
           <motion.div
-            className="w-screen flex-col p-2.5 rounded-border overflow-hidden"
+            className="w-screen flex-col overflow-hidden rounded-border p-2.5"
             initial={{
               /**@ts-ignore */
               "--color-start": "#0000000", // Initial start color of the gradient

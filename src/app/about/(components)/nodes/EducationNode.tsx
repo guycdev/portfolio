@@ -15,7 +15,7 @@ function EducationNode({ data }: EducationNodeProps) {
   return (
     <>
       <div
-        className="nodrag flex clickable rounded-sm border-2 border-primary bg-red-500"
+        className="nodrag clickable flex rounded-sm border-2 border-primary bg-red-500"
         onClick={onOpen}
       >
         <Handle type="target" position={Position.Top} />

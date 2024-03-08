@@ -89,13 +89,13 @@ function Flow({ selectedFlow }: FlowProps) {
   }
 
   return (
-    <div className="h-[100%] flex-1 p-3 bg-bg rounded-e-md">
+    <div className="h-[100%] flex-1 rounded-e-md bg-bg p-3">
       <ReactFlow
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypes}
         fitView
-        className="bg-bg rounded-xl "
+        className="rounded-xl bg-bg "
       >
         {/* <MiniMap
           position="top-right"

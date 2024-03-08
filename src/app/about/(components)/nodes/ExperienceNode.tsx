@@ -15,15 +15,15 @@ function ExperienceNode({ data }: ExperienceNodeProps) {
   return (
     <>
       <div
-        className="nodrag flex clickable rounded-lg border border-neutral-700 bg-bg p-3"
+        className="nodrag clickable flex rounded-lg border border-neutral-700 bg-bg p-3"
         onClick={onOpen}
       >
         <Handle type="target" position={Position.Top} />
         <div className="px-2 py-6 ">
-          <p className="text-primary text-xs">{date}</p>
+          <p className="text-xs text-primary">{date}</p>
         </div>
-        <div className="p-2 flex flex-col gap-2">
-          <div className="flex-col flex">
+        <div className="flex flex-col gap-2 p-2">
+          <div className="flex flex-col">
             <div className="flex justify-between">
               <p className="font-semibold text-accent">{place}</p>
               <div className="flex w-fit items-center gap-1 rounded-xl bg-neutral-800 px-3 py-0.5">
@@ -33,12 +33,12 @@ function ExperienceNode({ data }: ExperienceNodeProps) {
             </div>
             <p className="text-primary">{role}</p>
           </div>
-          <p className="my-2 max-w-96 text-primary text-sm">{description}</p>
-          <div className="flex flex-wrap gap-2 mb-1">
+          <p className="my-2 max-w-96 text-sm text-primary">{description}</p>
+          <div className="mb-1 flex flex-wrap gap-2">
             {data.stack.map((tech, index) => (
               <p
                 key={index}
-                className="text-primary bg-slate-800 rounded-xl px-3 text-sm py-1 font-semibold "
+                className="rounded-xl bg-slate-800 px-3 py-1 text-sm font-semibold text-primary "
               >
                 {tech}
               </p>
