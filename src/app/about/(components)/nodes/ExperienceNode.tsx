@@ -33,7 +33,7 @@ function ExperienceNode({ data }: ExperienceNodeProps) {
             </div>
             <p className="text-primary">{role}</p>
           </div>
-          <p className="my-2 max-w-96 text-sm text-primary">{description}</p>
+          <p className="text-header my-2 max-w-96 text-sm">{description}</p>
           <div className="mb-1 flex flex-wrap gap-2">
             {data.stack.map((tech, index) => (
               <p

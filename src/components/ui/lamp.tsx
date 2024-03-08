@@ -46,30 +46,30 @@ export function LampDemo() {
           className="clickable group absolute top-[170%] cursor-none"
         >
           <motion.div
-            initial={{
-              /**@ts-ignore */
-              "--color-start": "#f1f5f9", // Initial start color of the gradient
-              "--color-end": "#64748b", // Initial end color of the gradient
-              pointerEvents: "none",
-            }}
-            animate={{
-              /**@ts-ignore */
-              "--color-start": "#64748b", // Animate to this start color
-              "--color-end": "#f1f5f9", // Animate to this end color
-              pointerEvents: "unset",
-              transition: {
-                duration: 1,
-                delay: 3,
-                repeat: Infinity,
-                repeatType: "reverse",
-                repeatDelay: 1,
-              },
-            }}
-            style={{
-              background:
-                "linear-gradient(to bottom right, var(--color-start), var(--color-end))",
-            }}
-            className="clickable rounded-full p-0.5 transition-all"
+            // initial={{
+            //   /**@ts-ignore */
+            //   "--color-start": "#f1f5f9", // Initial start color of the gradient
+            //   "--color-end": "#64748b", // Initial end color of the gradient
+            //   pointerEvents: "none",
+            // }}
+            // animate={{
+            //   /**@ts-ignore */
+            //   "--color-start": "#64748b", // Animate to this start color
+            //   "--color-end": "#f1f5f9", // Animate to this end color
+            //   pointerEvents: "unset",
+            //   transition: {
+            //     duration: 1,
+            //     delay: 3,
+            //     repeat: Infinity,
+            //     repeatType: "reverse",
+            //     repeatDelay: 1,
+            //   },
+            // }}
+            // style={{
+            //   background:
+            //     "linear-gradient(to bottom right, var(--color-start), var(--color-end))",
+            // }}
+            className="clickable css-selector rounded-full p-0.5 transition-all"
           >
             <motion.div className="rounded-3xl bg-bg px-10 py-2 font-normal text-primary transition-all duration-500 group-hover:bg-accent group-hover:shadow-glow-button">
               <p className=" bg-gradient-to-br from-secondary to-primary bg-clip-text transition-all group-hover:from-bg group-hover:to-bg">

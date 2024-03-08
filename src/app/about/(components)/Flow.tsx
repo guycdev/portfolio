@@ -89,7 +89,7 @@ function Flow({ selectedFlow }: FlowProps) {
   }
 
   return (
-    <div className="h-[100%] flex-1 rounded-e-md bg-bg p-3">
+    <div className="h-[100%] flex-1 rounded-e-border bg-bg p-3">
       <ReactFlow
         nodes={nodes}
         edges={edges}

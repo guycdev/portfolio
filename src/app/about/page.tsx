@@ -11,8 +11,6 @@ const Home = () => {
   const [selectedFlow, setSelectedFlow] = useState<NodeType>("experienceNode");
   const [attributeFilter, setAttributeFilter] = useState("");
 
-  console.log(attributeFilter);
-
   return (
     <SetFlowContext.Provider
       value={{
@@ -23,7 +21,7 @@ const Home = () => {
       }}
     >
       <motion.div
-        className="flex  h-[100%] w-[100%]"
+        className="flex  h-[100%] w-[100%] "
         // initial={{
         //   opacity: 0,
         // }}

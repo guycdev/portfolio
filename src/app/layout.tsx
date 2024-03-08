@@ -29,9 +29,11 @@ export default function RootLayout({
           hasBlendMode={true}
           innerStyle={{
             backgroundColor: "#f1f5f9",
+            zIndex: 15000,
           }}
           outerStyle={{
             border: "3px solid #64748b",
+            zIndex: 15000,
           }}
         />
         <div className="flex h-screen overflow-hidden p-2">

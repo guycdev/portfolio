@@ -22,6 +22,7 @@ const config: Config = {
         accent: "#f1f5f9",
         "lamp-glow": "#64748b",
         "lamp-bar": "#64748b",
+        header: "#f1f5f9",
         // bg: "#000a1e",
         // "bg-hue": "#0c142a",
         // text: "#d7e3ff",

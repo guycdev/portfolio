@@ -37,7 +37,7 @@ const NodeModal = ({ isOpen, onClose, data }: NodeModalProps) => {
                     </p>
                   </div>
                   <div className="!m-0 !p-0 text-base font-normal">
-                    <span className="text-primary ">{data.description}</span>
+                    <span className="text-header ">{data.description}</span>
                   </div>
                   <div className="mt-4 flex w-full flex-1 rounded-lg bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
                   <div className="flex flex-col gap-10">
