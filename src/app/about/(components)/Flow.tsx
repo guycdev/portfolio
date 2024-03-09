@@ -93,7 +93,7 @@ function Flow({ selectedFlow }: FlowProps) {
     <div className="h-[100%] flex-1 rounded-e-border bg-bg p-3">
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 2.2, duration: 1 } }}
+        animate={{ opacity: 1, transition: { delay: 2.1, duration: 0.8 } }}
         className="h-[100%]"
       >
         <ReactFlow

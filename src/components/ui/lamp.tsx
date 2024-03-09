@@ -29,29 +29,34 @@ export function LampDemo() {
           <p className="te text-xl font-semibold text-primary">Learner</p>
         </div>
         <MotionBox
-          as={Link}
-          href="/about"
-          initial={{
-            /**@ts-ignore */
-            opacity: 0,
-          }}
-          animate={{
-            /**@ts-ignore */
-            opacity: 1,
-            transition: {
-              duration: 1,
-              delay: 2.5,
-            },
-          }}
           className="clickable group absolute top-[170%] cursor-none"
+          initial={{ display: "none" }}
+          animate={{ display: "unset", transition: { delay: 2.3 } }}
         >
-          <motion.div className="clickable css-selector rounded-full p-0.5 transition-all">
-            <motion.div className="rounded-3xl bg-bg px-10 py-2 font-normal text-primary transition-all duration-500 group-hover:bg-accent group-hover:shadow-glow-button">
-              <p className=" bg-gradient-to-br from-secondary to-primary bg-clip-text transition-all group-hover:from-bg group-hover:to-bg">
-                My Work
-              </p>
+          <MotionBox
+            as={Link}
+            href="/about"
+            initial={{
+              /**@ts-ignore */
+              opacity: 0,
+            }}
+            animate={{
+              /**@ts-ignore */
+              opacity: 1,
+              transition: {
+                duration: 1,
+                delay: 2.5,
+              },
+            }}
+          >
+            <motion.div className="css-selector rounded-full p-0.5 transition-all">
+              <motion.div className="rounded-3xl bg-bg px-10 py-2 font-normal text-primary transition-all duration-500 group-hover:bg-accent group-hover:shadow-glow-button">
+                <p className=" bg-gradient-to-br from-secondary to-primary bg-clip-text transition-all group-hover:from-bg group-hover:to-bg">
+                  My Work
+                </p>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </MotionBox>
         </MotionBox>
       </motion.div>
     </LampContainer>

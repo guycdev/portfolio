@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import FlowNavigation from "./FlowNavigation";
 import Link from "next/link";
 import { AboutFooter } from "./AboutFooter";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FormModal } from "@/app/about/(components)/form-modal";
 import AnimatedText from "@/components/AnimatedText";
 import { IoChevronBackOutline } from "react-icons/io5";
@@ -20,16 +20,20 @@ const HomeInformation = () => {
         href="/"
         className="absolute left-4 top-4 flex items-center"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 0.3 } }}
+        animate={{ opacity: 1, transition: { delay: 0.5 } }}
       >
         <IoChevronBackOutline className={iconStyles} />
       </MotionLink>
       <div className="flex h-[100%] flex-col justify-between p-16">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col">
-            <h2 className="w-fit bg-gradient-to-r from-secondary to-primary bg-clip-text pb-1 text-5xl font-semibold text-transparent">
-              <AnimatedText words="Guy Cohen" />
-            </h2>
+            <motion.h2
+              className="w-fit bg-gradient-to-r from-secondary to-primary bg-clip-text pb-1 text-5xl font-semibold text-transparent"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: 0.5 } }}
+            >
+              Guy Cohen
+            </motion.h2>
             <div>
               <p className="text-header text-lg ">
                 <AnimatedText words="Software Engineer" />

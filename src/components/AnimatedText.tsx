@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 
 const childVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1 },
+  visible: { opacity: 1, transition: { duration: 1 } },
 };
 
 const AnimatedText = ({ words }: { words: string }) => {
-  const wordsArr = words.split("");
+  const wordsArr = words.split(" ");
   const wordsElementArr = wordsArr.map((word, index) => {
     return (
       <motion.span variants={childVariants} key={index + word}>
-        {word}
+        {word}{" "}
       </motion.span>
     );
   });
@@ -20,7 +20,7 @@ const AnimatedText = ({ words }: { words: string }) => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 1 / wordsElementArr.length,
+        staggerChildren: 0.75 / wordsArr.length,
       },
     },
   };
