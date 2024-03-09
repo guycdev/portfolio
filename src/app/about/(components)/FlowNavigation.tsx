@@ -1,8 +1,28 @@
 import { useSetFlowContext } from "@/context/SetFlowContext";
 import FlowNavLink from "./FlowNavLink";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import { Input } from "@/components/ui/input";
+import { NodeType } from "@/utils/interfaces";
+import { motion } from "framer-motion";
+
+const navArr: { label: string; value: NodeType }[] = [
+  { label: "Experiences", value: "experienceNode" },
+  { label: "Hackathons", value: "hackathonNode" },
+  { label: "Projects", value: "projectNode" },
+  { label: "Education", value: "educationNode" },
+  { label: "Involvement", value: "involvementNode" },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
 
 const FlowNavigation = () => {
   const { setAttributeFilter, attributeFilter } = useSetFlowContext();
@@ -12,8 +32,17 @@ const FlowNavigation = () => {
     setAttributeFilter(value);
   };
 
+  const navLinkArr = navArr.map((nav, index) => (
+    <FlowNavLink label={nav.label} value={nav.value} key={index} />
+  ));
+
   return (
-    <div className="flex w-[20%] flex-col gap-8 py-5">
+    <motion.div
+      className="flex w-[20%] flex-col gap-6 "
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {/* <div className="flex clickable">
         <Input
           type="text"
@@ -23,12 +52,8 @@ const FlowNavigation = () => {
           className="cursor-none bg-transparent border-b border-primary"
         />
       </div> */}
-      <FlowNavLink label="Experience" value="experienceNode" />
-      <FlowNavLink label="Education" value="educationNode" />
-      <FlowNavLink label="Projects" value="projectNode" />
-      <FlowNavLink label="Hackathons" value="hackathonNode" />
-      <FlowNavLink label="Involvement" value="involvementNode" />
-    </div>
+      {navLinkArr}
+    </motion.div>
   );
 };
 

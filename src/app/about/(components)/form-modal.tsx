@@ -8,21 +8,18 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
+const childVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
 export const FormModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <motion.div
         className="clickable group relative flex h-fit w-fit items-center overflow-hidden"
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-          transition: {
-            delay: 2,
-          },
-        }}
+        variants={childVariants}
       >
         <BiMailSend
           onClick={onOpen}

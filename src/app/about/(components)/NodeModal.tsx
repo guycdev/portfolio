@@ -7,7 +7,7 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
-import { PinContainer } from "@/components/ui/3d-pin";
+import { PinContainer } from "@/components/ui/3dPin";
 
 interface NodeModalProps {
   isOpen: boolean;

@@ -1,15 +1,36 @@
-import Link from "next/link";
 import { JSX } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import { BsTwitterX } from "react-icons/bs";
 import { PiGithubLogo } from "react-icons/pi";
 import { SiDevpost } from "react-icons/si";
-import { motion } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
+import { IoChevronBackOutline } from "react-icons/io5";
 
-export const AboutFooter = ({ children }: { children: JSX.Element }) => {
-  const iconStyles =
-    "text-primary w-8 h-8 hover:text-accent cursor-none clickable transition-all hover:scale-110 duration-300";
+// Define animation variants for the parent
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
 
+// Define animation variants for the children
+const childVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+export const AboutFooter = ({
+  children,
+  iconStyles,
+}: {
+  children: JSX.Element;
+  iconStyles: string;
+}) => {
   const icons = [
     { link: "https://www.linkedin.com/feed/", icon: FaLinkedin },
     { link: "https://www.linkedin.com/feed/", icon: BsTwitterX },
@@ -23,15 +44,7 @@ export const AboutFooter = ({ children }: { children: JSX.Element }) => {
     <MotionLink
       key={link + index}
       href={link}
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-        transition: {
-          delay: index - index * 0.5,
-        },
-      }}
+      variants={childVariants}
       className="flex items-center"
     >
       <LinkIcon className={iconStyles} />
@@ -39,9 +52,14 @@ export const AboutFooter = ({ children }: { children: JSX.Element }) => {
   ));
 
   return (
-    <div className="flex justify-end gap-6">
+    <motion.div
+      className="flex gap-4"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {iconArr}
       {children}
-    </div>
+    </motion.div>
   );
 };

@@ -1,8 +1,9 @@
+import { useMemo } from "react";
+import { motion } from "framer-motion";
 import ReactFlow, { Background, Node, Edge, NodeTypes } from "reactflow";
+import "reactflow/dist/style.css";
 import ExperienceNode from "./nodes/ExperienceNode";
 import EducationNode from "./nodes/EducationNode";
-import "reactflow/dist/style.css";
-import { useMemo } from "react";
 import { NodeType } from "@/utils/interfaces";
 import { FaEthereum, FaNode, FaReact } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
@@ -90,21 +91,27 @@ function Flow({ selectedFlow }: FlowProps) {
 
   return (
     <div className="h-[100%] flex-1 rounded-e-border bg-bg p-3">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        nodeTypes={nodeTypes}
-        fitView
-        className="rounded-xl bg-bg "
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 2.2, duration: 1 } }}
+        className="h-[100%]"
       >
-        {/* <MiniMap
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          nodeTypes={nodeTypes}
+          fitView
+          className="rounded-xl bg-bg "
+        >
+          {/* <MiniMap
           position="top-right"
           nodeColor={nodeColor}
           nodeStrokeColor="#000000"
         /> */}
-        {/* <Controls /> */}
-        <Background />
-      </ReactFlow>
+          {/* <Controls /> */}
+          <Background />
+        </ReactFlow>
+      </motion.div>
     </div>
   );
 }
