@@ -46,6 +46,7 @@ export const AboutFooter = ({
       href={link}
       variants={childVariants}
       className="flex items-center"
+      target="_blank"
     >
       <LinkIcon className={iconStyles} />
     </MotionLink>
@@ -53,7 +54,7 @@ export const AboutFooter = ({
 
   return (
     <motion.div
-      className="flex gap-4"
+      className="flex gap-4 xl:gap-5"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

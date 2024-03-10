@@ -1,17 +1,22 @@
 import { useSetFlowContext } from "@/context/SetFlowContext";
 import FlowNavLink from "./FlowNavLink";
-import { ChangeEvent, useEffect } from "react";
-import { BiSearch } from "react-icons/bi";
-import { Input } from "@/components/ui/input";
 import { NodeType } from "@/utils/interfaces";
 import { motion } from "framer-motion";
+import React from "react";
+import Select from "react-select";
+
+const options = [
+  { value: "chocolate", label: "Chocolate" },
+  { value: "strawberry", label: "Strawberry" },
+  { value: "vanilla", label: "Vanilla" },
+];
 
 const navArr: { label: string; value: NodeType }[] = [
-  { label: "Experiences", value: "experienceNode" },
-  { label: "Hackathons", value: "hackathonNode" },
-  { label: "Projects", value: "projectNode" },
-  { label: "Education", value: "educationNode" },
-  { label: "Involvement", value: "involvementNode" },
+  { label: "Experiences", value: "experiences" },
+  { label: "Hackathons", value: "hackathons" },
+  { label: "Projects", value: "projects" },
+  { label: "Education", value: "education" },
+  { label: "Involvement", value: "involvement" },
 ];
 
 const containerVariants = {
@@ -25,15 +30,19 @@ const containerVariants = {
 };
 
 const FlowNavigation = () => {
-  const { setAttributeFilter, attributeFilter } = useSetFlowContext();
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setAttributeFilter(value);
-  };
+  const context = useSetFlowContext();
+  const { setSelectedFlow, selectedFlow, allTech, setAttributeFilter } =
+    context;
 
   const navLinkArr = navArr.map((nav, index) => (
-    <FlowNavLink label={nav.label} value={nav.value} key={index} />
+    <FlowNavLink
+      label={nav.label}
+      value={nav.value}
+      key={index}
+      setSelectedFlow={setSelectedFlow}
+      selectedFlow={selectedFlow}
+      setAttributeFilter={setAttributeFilter}
+    />
   ));
 
   return (
@@ -43,16 +52,13 @@ const FlowNavigation = () => {
       initial="hidden"
       animate="visible"
     >
-      {/* <div className="flex clickable">
-        <Input
-          type="text"
-          value={attributeFilter}
-          onChange={handleChange}
-          placeholder="filter by skill"
-          className="cursor-none bg-transparent border-b border-primary"
-        />
-      </div> */}
       {navLinkArr}
+      <Select
+        options={allTech}
+        onChange={(selectedData) => {
+          setAttributeFilter(selectedData);
+        }}
+      />
     </motion.div>
   );
 };

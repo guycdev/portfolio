@@ -1,15 +1,47 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Flow from "./(components)/Flow";
 import HomeInformation from "./(components)/HomeInformation";
-import { NodeType } from "@/utils/interfaces";
+import { AllTechInterface, NodeType } from "@/utils/interfaces";
 import { SetFlowContext } from "@/context/SetFlowContext";
-import { motion } from "framer-motion";
+import { Node, ReactFlowProvider } from "reactflow";
+import { allNodes } from "@/utils/nodes";
 
 const Home = () => {
-  const [selectedFlow, setSelectedFlow] = useState<NodeType>("experienceNode");
-  const [attributeFilter, setAttributeFilter] = useState("");
+  const [selectedFlow, setSelectedFlow] = useState<NodeType>("experiences");
+  const [attributeFilter, setAttributeFilter] =
+    useState<AllTechInterface | null>(null);
+  const [allTech, setAllTech] = useState<AllTechInterface[] | undefined>(
+    undefined,
+  );
+
+  const nodes: Node[] = useMemo(() => {
+    return allNodes.filter((node) =>
+      attributeFilter
+        ? node.data.stack.includes(attributeFilter.value)
+        : node.data.section === selectedFlow,
+    );
+  }, [selectedFlow, attributeFilter]);
+
+  useEffect(() => {
+    const getAllNodes = () => {
+      const skills = allNodes
+        .map((node) => {
+          return [...node.data.stack];
+        })
+        .flat();
+      const skillsSet = new Set(skills);
+      const formattedSkills = Array.from(skillsSet).map((skill) => ({
+        value: skill,
+        label: skill,
+      }));
+      return formattedSkills;
+    };
+    setAllTech(getAllNodes());
+  }, [nodes]);
+
+  console.log(nodes);
 
   return (
     <SetFlowContext.Provider
@@ -18,23 +50,15 @@ const Home = () => {
         selectedFlow,
         attributeFilter,
         setAttributeFilter,
+        allTech,
       }}
     >
-      <motion.div
-        className="flex  h-[100%] w-[100%] "
-        // initial={{
-        //   opacity: 0,
-        // }}
-        // animate={{
-        //   opacity: 1,
-        //   transition: {
-        //     duration: 2,
-        //   },
-        // }}
-      >
+      <div className="flex  h-[100%] w-[100%] ">
         <HomeInformation />
-        <Flow selectedFlow={selectedFlow} />
-      </motion.div>
+        <ReactFlowProvider>
+          <Flow nodes={nodes} />
+        </ReactFlowProvider>
+      </div>
     </SetFlowContext.Provider>
   );
 };

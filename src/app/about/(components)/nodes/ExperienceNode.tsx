@@ -2,6 +2,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import { Handle, Position } from "reactflow";
 import NodeModal from "../NodeModal";
 import { ExperienceNodeData } from "@/utils/interfaces";
+import AnimatedText from "@/components/AnimatedText";
 
 interface ExperienceNodeProps {
   data: ExperienceNodeData;
@@ -33,7 +34,7 @@ function ExperienceNode({ data }: ExperienceNodeProps) {
             </div>
             <p className="text-primary">{role}</p>
           </div>
-          <p className="text-header my-2 max-w-96 text-sm">{description}</p>
+          <p className="my-2 max-w-96 text-sm text-header">{description}</p>
           <div className="mb-1 flex flex-wrap gap-2">
             {data.stack.map((tech, index) => (
               <p

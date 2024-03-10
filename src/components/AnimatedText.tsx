@@ -1,39 +1,29 @@
 import { motion } from "framer-motion";
 
-const childVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1 } },
-};
-
 const AnimatedText = ({ words }: { words: string }) => {
-  const wordsArr = words.split(" ");
-  const wordsElementArr = wordsArr.map((word, index) => {
+  const lettersArr = words.split("");
+  const lettersElementArr = lettersArr.map((word, index) => {
     return (
-      <motion.span variants={childVariants} key={index + word}>
-        {word}{" "}
+      <motion.span
+        key={index + word}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          transition: {
+            duration: 1.3,
+            delay: index / lettersArr.length,
+            type: "bounce",
+          },
+        }}
+      >
+        {word}
       </motion.span>
     );
   });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.75 / wordsArr.length,
-      },
-    },
-  };
-
-  return (
-    <motion.span
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      {wordsElementArr}
-    </motion.span>
-  );
+  return <span>{lettersElementArr}</span>;
 };
 
 export default AnimatedText;

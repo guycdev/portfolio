@@ -13,8 +13,13 @@ export interface ExperienceNodeData {
 }
 
 export type NodeType =
-  | "experienceNode"
-  | "educationNode"
-  | "projectNode"
-  | "hackathonNode"
-  | "involvementNode";
+  | "experiences"
+  | "hackathons"
+  | "projects"
+  | "education"
+  | "involvement";
+
+export interface AllTechInterface {
+  value: string;
+  label: string;
+}
