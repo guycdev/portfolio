@@ -3,7 +3,7 @@ import { AllTechInterface, NodeType } from "@/utils/interfaces";
 
 type FlowContextType = {
   setSelectedFlow: React.Dispatch<React.SetStateAction<NodeType>>;
-  selectedFlow: string;
+  selectedFlow: NodeType;
   attributeFilter: AllTechInterface | null;
   setAttributeFilter: React.Dispatch<
     React.SetStateAction<AllTechInterface | null>

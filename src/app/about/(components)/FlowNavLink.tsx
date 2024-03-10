@@ -8,10 +8,7 @@ interface FlowNavLinkProps {
   value: NodeType;
   className?: string;
   selectedFlow: string;
-  setSelectedFlow: React.Dispatch<React.SetStateAction<NodeType>>;
-  setAttributeFilter: React.Dispatch<
-    React.SetStateAction<AllTechInterface | null>
-  >;
+  onClick: () => void;
 }
 
 const childVariants = {
@@ -24,8 +21,7 @@ const FlowNavLink = ({
   value,
   className,
   selectedFlow,
-  setSelectedFlow,
-  setAttributeFilter,
+  onClick,
 }: FlowNavLinkProps) => {
   return (
     <motion.h5
@@ -35,10 +31,7 @@ const FlowNavLink = ({
         selectedFlow === value &&
           "ml-2 w-[9.5rem] scale-110 border-b-[3px] border-accent font-bold text-accent",
       )}
-      onClick={() => {
-        setSelectedFlow !== undefined ? setSelectedFlow(value) : undefined;
-        setAttributeFilter(null);
-      }}
+      onClick={onClick}
       variants={childVariants}
     >
       {label}
