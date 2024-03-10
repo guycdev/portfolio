@@ -7,6 +7,7 @@ import ReactFlow, {
   NodeTypes,
   Controls,
   Node,
+  MiniMap,
 } from "reactflow";
 import "reactflow/dist/style.css";
 import ExperienceNode from "./nodes/ExperienceNode";
@@ -54,7 +55,7 @@ function Flow() {
       case "output":
         return "#fafafa";
       default:
-        return "#fafafa";
+        return "black";
     }
   }
 
@@ -72,11 +73,12 @@ function Flow() {
           fitView
           className="rounded-xl bg-bg "
         >
-          {/* <MiniMap
-          position="top-right"
-          nodeColor={nodeColor}
-          nodeStrokeColor="#000000"
-        /> */}
+          <MiniMap
+            position="top-right"
+            nodeColor={nodeColor}
+            nodeStrokeColor="#000000"
+            nodeBorderRadius={25}
+          />
           <Controls />
           <Background />
         </ReactFlow>
