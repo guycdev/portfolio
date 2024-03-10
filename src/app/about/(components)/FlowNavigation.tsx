@@ -49,7 +49,7 @@ const FlowNavigation = () => {
 
   return (
     <motion.div
-      className="flex w-[20%] flex-col gap-6 "
+      className="flex flex-col gap-6 "
       variants={containerVariants}
       initial="hidden"
       animate="visible"
