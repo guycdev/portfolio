@@ -4,12 +4,7 @@ import { NodeType } from "@/utils/interfaces";
 import { motion } from "framer-motion";
 import React from "react";
 import Select from "react-select";
-
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
+import { allNodeOptions } from "@/utils/nodes";
 
 const navArr: { label: string; value: NodeType }[] = [
   { label: "Experiences", value: "experiences" },
@@ -31,8 +26,7 @@ const containerVariants = {
 
 const FlowNavigation = () => {
   const context = useSetFlowContext();
-  const { setSelectedFlow, selectedFlow, allTech, setAttributeFilter } =
-    context;
+  const { setSelectedFlow, selectedFlow, setAttributeFilter } = context;
 
   const navLinkArr = navArr.map((nav, index) => (
     <FlowNavLink
@@ -54,11 +48,13 @@ const FlowNavigation = () => {
     >
       {navLinkArr}
       <Select
-        options={allTech}
+        options={allNodeOptions}
         onChange={(selectedData) => {
           setAttributeFilter(selectedData);
+          setSelectedFlow("");
         }}
       />
+      {/* add another filter if the above is active to filter by activity */}
     </motion.div>
   );
 };

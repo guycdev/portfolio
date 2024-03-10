@@ -17,7 +17,8 @@ export type NodeType =
   | "hackathons"
   | "projects"
   | "education"
-  | "involvement";
+  | "involvement"
+  | "";
 
 export interface AllTechInterface {
   value: string;

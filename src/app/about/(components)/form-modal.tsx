@@ -23,7 +23,7 @@ export const FormModal = () => {
       >
         <BiMailSend
           onClick={onOpen}
-          className=" h-10 w-10 text-primary transition-all hover:scale-110 hover:text-accent xl:h-11 xl:w-11"
+          className=" 3xl:h-11 3xl:w-11 h-10 w-10 text-primary transition-all hover:scale-110 hover:text-accent"
         />
         <span className="relative bottom-3 right-2 flex h-3 w-3">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary  opacity-75 transition-all duration-300 group-hover:scale-125 group-hover:bg-accent"></span>

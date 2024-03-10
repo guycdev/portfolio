@@ -8,12 +8,6 @@ type FlowContextType = {
   setAttributeFilter: React.Dispatch<
     React.SetStateAction<AllTechInterface | null>
   >;
-  allTech:
-    | {
-        value: string;
-        label: string;
-      }[]
-    | undefined;
 };
 
 export const SetFlowContext = createContext<FlowContextType | undefined>(

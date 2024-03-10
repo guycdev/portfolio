@@ -54,7 +54,7 @@ export const AboutFooter = ({
 
   return (
     <motion.div
-      className="flex gap-4 xl:gap-5"
+      className="3xl:gap-5 flex gap-4"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

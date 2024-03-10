@@ -9,7 +9,7 @@ import { IoChevronBackOutline } from "react-icons/io5";
 
 const HomeInformation = () => {
   const iconStyles = useMemo(() => {
-    return "text-primary w-8 h-8 hover:text-accent cursor-none clickable transition-all hover:scale-110 duration-300 xl:w-9 xl:h-9";
+    return "text-primary w-8 h-8 hover:text-accent cursor-none clickable transition-all hover:scale-110 duration-300 3xl:w-9 3xl:h-9";
   }, []);
 
   const MotionLink = motion(Link);
@@ -34,16 +34,16 @@ const HomeInformation = () => {
             >
               Guy Cohen
             </motion.h2>
-            <div className="xl:mt-2 xl:space-y-2">
-              <p className="text-lg text-header  xl:text-xl">
+            <div className="3xl:mt-2 3xl:space-y-2">
+              <p className="text-header 3xl:text-xl  text-lg">
                 <AnimatedText words="Software Engineer" />
               </p>
-              <p className="text-text xl:text-xl">
+              <p className="3xl:text-xl text-text">
                 <AnimatedText words="Building pixel perfect UIs and scalable APIs" />
               </p>
             </div>
           </div>
-          <p className="text-balance text-sm text-header xl:text-lg	">
+          <p className="text-header 3xl:text-lg text-balance text-sm	">
             <AnimatedText
               words="
             In 2020, I discovered the world of programming. Since then I have

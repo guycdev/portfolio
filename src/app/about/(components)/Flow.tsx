@@ -6,25 +6,42 @@ import ReactFlow, {
   Edge,
   NodeTypes,
   Controls,
-  useReactFlow,
   Node,
 } from "reactflow";
 import "reactflow/dist/style.css";
 import ExperienceNode from "./nodes/ExperienceNode";
+import { allNodes } from "@/utils/nodes";
+import { useSetFlowContext } from "@/context/SetFlowContext";
 
-interface FlowProps {
-  nodes: Node[];
-}
+function Flow() {
+  const context = useSetFlowContext();
 
-function Flow({ nodes }: FlowProps) {
-  const { setViewport, setCenter } = useReactFlow();
+  const { attributeFilter, selectedFlow } = context;
 
-  const edges: Edge[] = useMemo(() => {
-    return [
-      { id: "edge-1", source: "node-1", target: "node-2", sourceHandle: "a" },
-      { id: "edge-2", source: "node-2", target: "node-3", sourceHandle: "b" },
-    ];
-  }, []);
+  const nodes: Node[] = useMemo(() => {
+    return allNodes
+      .filter((node) =>
+        attributeFilter
+          ? node.data.stack.includes(attributeFilter.value)
+          : node.data.section === selectedFlow,
+      )
+      .map((node, index) => ({
+        ...node,
+        position:
+          index % 2 == 0
+            ? { x: 0, y: index * 300 }
+            : { x: 300, y: 300 * index },
+      }));
+  }, [selectedFlow, attributeFilter]);
+
+  const edges: any[] = useMemo(() => {
+    return nodes.slice(0, -1).map((node, i) => ({
+      id: `edge-${i + 1}`,
+      source: node.id,
+      target: nodes[i + 1].id,
+      sourceHandle: "a",
+    }));
+  }, [nodes]);
 
   const nodeTypes: NodeTypes = useMemo(() => {
     return { node: ExperienceNode };

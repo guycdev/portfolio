@@ -104,4 +104,37 @@ export const allNodes = [
       section: "involvement",
     },
   },
+  {
+    id: "node-9",
+    type: "node",
+    position: { x: 300, y: 400 },
+    data: {
+      place: "Company Name",
+      role: "Role",
+      date: "Jan 2024 - Present",
+      description:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex soluta officia accusantium architecto, doloremque laborum!",
+      // img: "https://res.cloudinary.com/dojpkldcg/image/upload/v1708621378/miemqhtmtrs06jir8wae.png",
+      bullets: ["task 1", "task 2", "task 3"],
+      icons: [FaReact, FaNode, SiTypescript, FaEthereum],
+      stack: ["React", "Node", "TypeScript", "EthersJS"],
+      section: "experiences",
+    },
+  },
 ];
+
+const getAllNodes = () => {
+  const skills = allNodes
+    .map((node) => {
+      return [...node.data.stack];
+    })
+    .flat();
+  const skillsSet = new Set(skills);
+  const formattedSkills = Array.from(skillsSet).map((skill) => ({
+    value: skill,
+    label: skill,
+  }));
+  return formattedSkills;
+};
+
+export const allNodeOptions = getAllNodes();
