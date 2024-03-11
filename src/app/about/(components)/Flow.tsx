@@ -73,12 +73,14 @@ function Flow() {
           fitView
           className="rounded-xl bg-bg "
         >
-          <MiniMap
-            position="top-right"
-            nodeColor={nodeColor}
-            nodeStrokeColor="#000000"
-            nodeBorderRadius={25}
-          />
+          {nodes.length > 2 && (
+            <MiniMap
+              position="top-right"
+              nodeColor={nodeColor}
+              nodeStrokeColor="#000000"
+              nodeBorderRadius={25}
+            />
+          )}
           <Controls />
           <Background />
         </ReactFlow>
