@@ -1,5 +1,13 @@
 import { IconType } from "react-icons";
 
+export type NodeType =
+  | "experiences"
+  | "hackathons"
+  | "projects"
+  | "education"
+  | "involvement"
+  | "";
+
 export interface ExperienceNodeData {
   place: string;
   role: string;
@@ -9,16 +17,16 @@ export interface ExperienceNodeData {
   bullets: string[];
   source: string;
   icons: IconType[];
-  stack: string[];
+  stack: {
+    names: string[];
+    icons: IconType[];
+    colors: string[];
+  };
+  link: string;
+  section: NodeType;
+  tag: string;
+  code: string | undefined;
 }
-
-export type NodeType =
-  | "experiences"
-  | "hackathons"
-  | "projects"
-  | "education"
-  | "involvement"
-  | "";
 
 export interface AllTechInterface {
   value: string;

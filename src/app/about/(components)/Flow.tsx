@@ -23,15 +23,15 @@ function Flow() {
     return allNodes
       .filter((node) =>
         attributeFilter
-          ? node.data.stack.includes(attributeFilter.value)
+          ? node.data.stack.names.includes(attributeFilter.value)
           : node.data.section === selectedFlow,
       )
       .map((node, index) => ({
         ...node,
         position:
           index % 2 == 0
-            ? { x: 0, y: index * 300 }
-            : { x: 300, y: 300 * index },
+            ? { x: 0, y: index * 400 }
+            : { x: 300, y: 400 * index },
       }));
   }, [selectedFlow, attributeFilter]);
 

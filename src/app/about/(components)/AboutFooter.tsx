@@ -5,7 +5,6 @@ import { BsTwitterX } from "react-icons/bs";
 import { PiGithubLogo } from "react-icons/pi";
 import { SiDevpost } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
-import { IoChevronBackOutline } from "react-icons/io5";
 
 // Define animation variants for the parent
 const containerVariants = {
