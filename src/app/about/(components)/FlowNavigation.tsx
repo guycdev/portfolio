@@ -2,7 +2,7 @@ import { useSetFlowContext } from "@/context/SetFlowContext";
 import FlowNavLink from "./FlowNavLink";
 import { NodeType } from "@/utils/interfaces";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import { allNodeOptions } from "@/utils/nodes";
 import { FaMagnifyingGlass } from "react-icons/fa6";
@@ -10,7 +10,7 @@ import { twMerge } from "tailwind-merge";
 
 const navArr: { label: string; value: NodeType }[] = [
   { label: "Experiences", value: "experiences" },
-  { label: "Hackathons", value: "hackathons" },
+  { label: "Achievements", value: "achievements" },
   { label: "Projects", value: "projects" },
   { label: "Education", value: "education" },
   { label: "Involvement", value: "involvement" },

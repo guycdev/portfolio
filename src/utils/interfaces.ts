@@ -1,8 +1,9 @@
+import { As } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 
 export type NodeType =
   | "experiences"
-  | "hackathons"
+  | "achievements"
   | "projects"
   | "education"
   | "involvement"
@@ -18,10 +19,10 @@ export interface ExperienceNodeData {
   source: string;
   icons: IconType[];
   stack: {
-    names: string[];
-    icons: IconType[];
-    colors: string[];
-  };
+    name: string;
+    icon: As;
+    color: string;
+  }[];
   link: string;
   section: NodeType;
   tag: string;

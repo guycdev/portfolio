@@ -1,9 +1,8 @@
 "use client";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import ReactFlow, {
   Background,
-  Edge,
   NodeTypes,
   Controls,
   Node,
@@ -12,18 +11,29 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import ExperienceNode from "./nodes/ExperienceNode";
 import { allNodes } from "@/utils/nodes";
+import { useReactFlow } from "reactflow";
 import { useSetFlowContext } from "@/context/SetFlowContext";
 
 function Flow() {
   const context = useSetFlowContext();
 
+  const reactFlow = useReactFlow();
+
   const { attributeFilter, selectedFlow } = context;
+
+  useEffect(() => {
+    setTimeout(() => {
+      reactFlow.fitView({ includeHiddenNodes: true });
+    }, 100);
+  }, [attributeFilter, selectedFlow]);
 
   const nodes: Node[] = useMemo(() => {
     return allNodes
       .filter((node) =>
         attributeFilter
-          ? node.data.stack.names.includes(attributeFilter.value)
+          ? node.data.stack
+              .map((tech) => tech.name)
+              .includes(attributeFilter.value)
           : node.data.section === selectedFlow,
       )
       .map((node, index) => ({

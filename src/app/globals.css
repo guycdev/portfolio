@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --experiences: "#4A90E2";
-  --hackathons: "#F5A623";
-  --projects: "#7ED321";
-  --education: "#003366";
-  --involvement: "#9B59B6";
-}
-
 .css-selector {
   background: linear-gradient(125deg, #0f172a, #e2e8f0);
   background-size: 400% 400%;

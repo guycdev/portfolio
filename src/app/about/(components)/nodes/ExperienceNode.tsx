@@ -10,6 +10,14 @@ interface ExperienceNodeProps {
 function ExperienceNode({ data }: ExperienceNodeProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const sectionColors = {
+    experiences: "bg-[#4A90E2]",
+    achievements: "bg-[#F5A623]",
+    projects: "bg-[#7ED321]",
+    education: "bg-[#003366]",
+    involvement: "bg-[#9B59B6]",
+  };
+
   const { place, role, date, description, tag, section, stack } = data;
 
   return (
@@ -28,8 +36,8 @@ function ExperienceNode({ data }: ExperienceNodeProps) {
               <p className="font-semibold text-accent">{place}</p>
               <div className="flex w-fit items-center gap-1 rounded-xl bg-neutral-800 px-3 py-0.5">
                 <div
-                  className={`bg-[var(--${section})] h-3 w-3 rounded-full`}
-                ></div>
+                  className={`h-3 w-3 rounded-full ${section && sectionColors[section]}`}
+                />
                 <p className="text-xs text-primary">{tag}</p>
               </div>
             </div>
@@ -37,15 +45,11 @@ function ExperienceNode({ data }: ExperienceNodeProps) {
           </div>
           <p className="my-2 max-w-96 text-sm text-header">{description}</p>
           <div className="mb-1 flex w-[100%] flex-wrap gap-2">
-            {stack.names.map((tech, index) => (
+            {stack.map((tech, index) => (
               <div className="group flex items-center gap-2 rounded-xl bg-slate-800 px-3 py-1 text-sm font-semibold">
-                <Icon
-                  as={data.stack.icons[index]}
-                  color={data.stack.colors[index]}
-                  boxSize={5}
-                />
+                <Icon as={tech.icon} color={tech.color} boxSize={5} />
                 <p key={index} className="text-primary">
-                  {tech}
+                  {tech.name}
                 </p>
               </div>
             ))}

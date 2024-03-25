@@ -87,8 +87,13 @@ const NodeModal = ({ isOpen, onClose, data }: NodeModalProps) => {
                         }}
                       >
                         <Marquee autoFill>
-                          {data.stack.icons.map((icon, index) => (
-                            <Icon key={index} as={icon} boxSize={12} mx={8} />
+                          {data.stack.map((icon, index) => (
+                            <Icon
+                              key={index}
+                              as={icon.icon}
+                              boxSize={12}
+                              mx={8}
+                            />
                           ))}
                         </Marquee>
                       </motion.div>
