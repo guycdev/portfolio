@@ -1,11 +1,16 @@
 import React from "react";
-import { AllTechInterface, NodeType } from "@/utils/interfaces";
+import {
+  AllTechInterface,
+  NavLinkInterface,
+  NodeType,
+} from "@/utils/interfaces";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
+import { IconType } from "react-icons";
+import { Icon } from "@chakra-ui/react";
 
 interface FlowNavLinkProps {
-  label: string;
-  value: NodeType;
+  data: NavLinkInterface;
   className?: string;
   selectedFlow: string;
   onClick: () => void;
@@ -17,25 +22,26 @@ const childVariants = {
 };
 
 const FlowNavLink = ({
-  label,
-  value,
+  data,
   className,
   selectedFlow,
   onClick,
 }: FlowNavLinkProps) => {
+  const isActive = selectedFlow === data.value;
   return (
-    <motion.h5
+    <motion.div
       className={twMerge(
-        "clickable 3xl:text-xl w-32 border-b-2 border-primary text-primary opacity-0 transition-all duration-300 hover:ml-4 hover:w-44 hover:scale-110 hover:border-accent hover:text-accent",
+        "clickable 3xl:text-xl flex w-32 items-center gap-2 border-b-2 border-primary text-primary opacity-0 transition-all duration-300 hover:ml-4 hover:w-44 hover:scale-110 hover:border-accent hover:text-accent",
         className,
-        selectedFlow === value &&
+        isActive &&
           "ml-2 w-[9.5rem] scale-110 border-accent font-bold text-accent",
       )}
       onClick={onClick}
       variants={childVariants}
     >
-      {label}
-    </motion.h5>
+      <Icon as={isActive ? data.filledIcon : data.hollowIcon} />
+      <h5>{data.label}</h5>
+    </motion.div>
   );
 };
 

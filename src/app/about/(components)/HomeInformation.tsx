@@ -35,7 +35,7 @@ const HomeInformation = () => {
               Guy Cohen
             </motion.h2>
             <div className="3xl:mt-2 3xl:space-y-2">
-              <p className="text-header 3xl:text-xl  text-lg">
+              <p className="3xl:text-xl text-lg  text-header">
                 <AnimatedText words="Software Engineer" />
               </p>
               <p className="3xl:text-xl text-text">
@@ -43,7 +43,7 @@ const HomeInformation = () => {
               </p>
             </div>
           </div>
-          <p className="text-header 3xl:text-lg text-balance text-sm	">
+          <p className="3xl:text-lg text-md text-balance text-header	">
             <AnimatedText
               words="
             In 2020, I discovered the world of programming. Since then I have

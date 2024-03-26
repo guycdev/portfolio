@@ -10,7 +10,7 @@ export type NodeType =
   | "";
 
 export interface ExperienceNodeData {
-  place: string;
+  title: string;
   role: string;
   date: string;
   description: string;
@@ -32,4 +32,11 @@ export interface ExperienceNodeData {
 export interface AllTechInterface {
   value: string;
   label: string;
+}
+
+export interface NavLinkInterface {
+  label: string;
+  value: NodeType;
+  filledIcon: IconType;
+  hollowIcon: IconType;
 }

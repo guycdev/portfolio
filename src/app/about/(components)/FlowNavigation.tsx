@@ -1,19 +1,56 @@
-import { useSetFlowContext } from "@/context/SetFlowContext";
 import FlowNavLink from "./FlowNavLink";
-import { NodeType } from "@/utils/interfaces";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Select from "react-select";
 import { allNodeOptions } from "@/utils/nodes";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { twMerge } from "tailwind-merge";
+import {
+  MdWork,
+  MdWorkOutline,
+  MdOutlineHandshake,
+  MdHandshake,
+} from "react-icons/md";
+import { HiOutlineAcademicCap, HiAcademicCap } from "react-icons/hi2";
+import { useSetFlowContext } from "@/context/SetFlowContext";
+import {
+  PiProjectorScreenChart,
+  PiProjectorScreenChartFill,
+} from "react-icons/pi";
+import { IoTrophy, IoTrophyOutline } from "react-icons/io5";
+import { NavLinkInterface, NodeType } from "@/utils/interfaces";
 
-const navArr: { label: string; value: NodeType }[] = [
-  { label: "Experiences", value: "experiences" },
-  { label: "Achievements", value: "achievements" },
-  { label: "Projects", value: "projects" },
-  { label: "Education", value: "education" },
-  { label: "Involvement", value: "involvement" },
+const navArr: NavLinkInterface[] = [
+  {
+    filledIcon: MdWork,
+    hollowIcon: MdWorkOutline,
+    label: "Experiences",
+    value: "experiences",
+  },
+  {
+    filledIcon: IoTrophy,
+    hollowIcon: IoTrophyOutline,
+    label: "Achievements",
+    value: "achievements",
+  },
+  {
+    filledIcon: PiProjectorScreenChartFill,
+    hollowIcon: PiProjectorScreenChart,
+    label: "Projects",
+    value: "projects",
+  },
+  {
+    filledIcon: HiAcademicCap,
+    hollowIcon: HiOutlineAcademicCap,
+    label: "Education",
+    value: "education",
+  },
+  {
+    filledIcon: MdHandshake,
+    hollowIcon: MdOutlineHandshake,
+    label: "Involvement",
+    value: "involvement",
+  },
 ];
 
 const containerVariants = {
@@ -35,8 +72,7 @@ const FlowNavigation = () => {
 
   const navLinkArr = navArr.map((nav, index) => (
     <FlowNavLink
-      label={nav.label}
-      value={nav.value}
+      data={nav}
       key={index}
       selectedFlow={selectedFlow}
       onClick={() => {

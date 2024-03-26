@@ -38,7 +38,7 @@ const NodeModal = ({ isOpen, onClose, data }: NodeModalProps) => {
                   <div className="flex w-[30rem] basis-full flex-col gap-3 p-4 tracking-tight text-accent/50 sm:basis-1/2 ">
                     <div className="flex flex-col">
                       <h3 className="!m-0  max-w-xs text-base  font-bold text-accent">
-                        <AnimatedText words={data.place} />
+                        <AnimatedText words={data.title} />
                       </h3>
                       <p className="!m-0  max-w-xs text-base font-semibold text-primary">
                         <AnimatedText words={data.role} />
