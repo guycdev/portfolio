@@ -55,7 +55,10 @@ function Node({ data }: ExperienceNodeProps) {
           {stack.length > 0 && (
             <div className="mb-1 flex w-[100%] flex-wrap gap-2">
               {stack.map((tech, index) => (
-                <div className="group flex items-center gap-2 rounded-xl bg-slate-800 px-3 py-1 text-sm font-semibold">
+                <div
+                  className="group flex items-center gap-2 rounded-xl bg-slate-800 px-3 py-1 text-sm font-semibold"
+                  key={tech.name + tech.color}
+                >
                   <Icon as={tech.icon} color={tech.color} boxSize={5} />
                   <p key={index} className="text-primary">
                     {tech.name}

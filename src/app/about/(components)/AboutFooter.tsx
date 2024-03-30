@@ -63,9 +63,13 @@ export const AboutFooter = ({
   const MotionLink = motion(Link);
 
   const iconArr = icons.map(({ link, icon: LinkIcon, label }, index) => (
-    <Tooltip label={label} placement="top" className="bg-primary">
+    <Tooltip
+      label={label}
+      placement="top"
+      className="bg-primary"
+      key={link + index}
+    >
       <MotionLink
-        key={link + index}
         href={link}
         variants={childVariants}
         className="flex items-center"
