@@ -45,7 +45,7 @@ function Flow() {
         reactFlow.fitView({ includeHiddenNodes: true });
       }
     }, 100);
-  }, [attributeFilter, selectedFlow, reactFlow]);
+  }, [attributeFilter, selectedFlow, reactFlow, nodes]);
 
   const edges: any[] = useMemo(() => {
     return nodes.slice(0, -1).map((node, i) => ({
