@@ -21,12 +21,6 @@ function Flow() {
 
   const { attributeFilter, selectedFlow } = context;
 
-  useEffect(() => {
-    setTimeout(() => {
-      reactFlow.fitView({ includeHiddenNodes: true });
-    }, 100);
-  }, [attributeFilter, selectedFlow, reactFlow]);
-
   const nodes: Node[] = useMemo(() => {
     return formattedNodes
       .filter((node) =>
@@ -44,6 +38,14 @@ function Flow() {
             : { x: 300, y: 400 * index },
       }));
   }, [selectedFlow, attributeFilter]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (nodes.length === 1) {
+        reactFlow.fitView({ includeHiddenNodes: true });
+      }
+    }, 100);
+  }, [attributeFilter, selectedFlow, reactFlow]);
 
   const edges: any[] = useMemo(() => {
     return nodes.slice(0, -1).map((node, i) => ({

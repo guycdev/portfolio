@@ -15,12 +15,18 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
-import { BsMusicNote, BsPassport } from "react-icons/bs";
-import convexSvg from "@/components/convex-svg";
-import { TbBrandVite } from "react-icons/tb";
+import { BsFillNodePlusFill, BsMusicNote, BsPassport } from "react-icons/bs";
+import convexSvg from "@/components/icons/convex-svg";
+import { As } from "@chakra-ui/react";
+import { TbBrandVite, TbShoe } from "react-icons/tb";
 import { SiSelenium } from "react-icons/si";
 import { IconType } from "react-icons";
 import { AllTechInterface } from "./interfaces";
+import ZxSvg from "@/components/icons/zx-xvg";
+import GoogleSvg from "@/components/icons/google-svg";
+import OsuSvg from "@/components/icons/osu-svg";
+import RyersonSvg from "@/components/icons/ryerson-svg";
+import { BiNetworkChart } from "react-icons/bi";
 
 interface PreformattedNodes {
   id: string;
@@ -28,6 +34,7 @@ interface PreformattedNodes {
   position: { x: 0; y: 0 };
   data: {
     title: string;
+    locationIcon: As;
     role: string;
     date: string;
     description: string;
@@ -124,6 +131,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "ZeroX Gaming",
+      locationIcon: ZxSvg,
       role: "Software Engineer Intern",
       date: "Jan 2024 - Present",
       description:
@@ -149,6 +157,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "Oregon State University",
+      locationIcon: OsuSvg,
       role: "Bachelor of Science in Computer Science",
       date: "Sept 2023 - Mar 2025",
       description:
@@ -164,6 +173,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "Beaverhacks Winter 2024",
+      locationIcon: OsuSvg,
       role: "2nd Place Hackathon Winner",
       date: "Mar 2024",
       description:
@@ -180,6 +190,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "Google Hacks x Beaverhacks",
+      locationIcon: GoogleSvg,
       role: "1st Place Hackathon Winner",
       date: "Nov 2023",
       description:
@@ -203,6 +214,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "Ryerson RIT Competition",
+      locationIcon: RyersonSvg,
       role: "1st Place Hackathon Winner",
       date: "Jan 2023 - Apr 2023",
       description:
@@ -219,6 +231,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "Image Search",
+      locationIcon: BiNetworkChart,
       role: "AI generated image search engine",
       date: "Mar 2024",
       description:
@@ -235,6 +248,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "Analog Designs",
+      locationIcon: BsFillNodePlusFill,
       role: "Freelance Design Platform",
       date: "May 2023",
       description:
@@ -261,6 +275,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "SNKRS Solutions",
+      locationIcon: TbShoe,
       role: "Retail Arbitrage Monitors",
       date: "Apr 2020 - Sep 2022",
       description:
@@ -278,6 +293,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "Ryerson University",
+      locationIcon: RyersonSvg,
       role: "Bachelor of Commerce in Finance",
       date: "Sept 2019 - June 2023",
       description:
@@ -293,6 +309,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "Sponsorship Coordinator",
+      locationIcon: OsuSvg,
       role: "Oregon State Hackathon Fund",
       date: "Jan 2024 - Present",
       description:
@@ -308,6 +325,7 @@ const allNodes: PreformattedNodes[] = [
     position: { x: 0, y: 0 },
     data: {
       title: "Equity Analyst",
+      locationIcon: RyersonSvg,
       role: "Ryerson Student Managed Investment Fund",
       date: "Apr 2021 - Aug 2021",
       description:

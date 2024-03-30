@@ -12,6 +12,7 @@ export type NodeType =
 export interface ExperienceNodeData {
   title: string;
   role: string;
+  locationIcon: As;
   date: string;
   description: string;
   img: string;

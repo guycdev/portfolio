@@ -16,7 +16,17 @@ function Node({ data }: ExperienceNodeProps) {
     involvement: "bg-[#9B59B6]",
   };
 
-  const { title, role, date, description, tag, section, stack, github } = data;
+  const {
+    title,
+    role,
+    date,
+    description,
+    tag,
+    section,
+    stack,
+    github,
+    locationIcon,
+  } = data;
 
   return (
     <>
@@ -41,7 +51,10 @@ function Node({ data }: ExperienceNodeProps) {
         <div className="flex max-w-[429.797px] flex-col gap-2 p-2">
           <div className="flex flex-col">
             <div className="flex justify-between">
-              <p className="font-semibold text-accent">{title}</p>
+              <div className="flex items-center gap-2">
+                <Icon as={locationIcon} color="white" />
+                <p className="font-semibold text-accent">{title}</p>
+              </div>
               <div className="flex w-fit items-center gap-1 rounded-xl bg-neutral-800 px-3 py-0.5">
                 <div
                   className={`h-3 w-3 rounded-full ${section && sectionColors[section]}`}
@@ -49,7 +62,7 @@ function Node({ data }: ExperienceNodeProps) {
                 <p className="text-xs text-primary">{tag}</p>
               </div>
             </div>
-            <p className="text-primary">{role}</p>
+            <p className="font-bold text-primary">{role}</p>
           </div>
           <p className="my-2 max-w-96 text-sm text-header">{description}</p>
           {stack.length > 0 && (
