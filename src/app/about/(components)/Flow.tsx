@@ -25,7 +25,7 @@ function Flow() {
     setTimeout(() => {
       reactFlow.fitView({ includeHiddenNodes: true });
     }, 100);
-  }, [attributeFilter, selectedFlow]);
+  }, [attributeFilter, selectedFlow, reactFlow]);
 
   const nodes: Node[] = useMemo(() => {
     return formattedNodes
