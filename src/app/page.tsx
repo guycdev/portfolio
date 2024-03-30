@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <main className="flex h-[100%] flex-col items-center justify-between overflow-hidden">
-      {/* <Cursor /> */}
       <LampDemo />
       <motion.div
         className="w-full"
