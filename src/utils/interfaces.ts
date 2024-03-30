@@ -32,7 +32,7 @@ export interface ExperienceNodeData {
 export interface AllTechInterface {
   value: string;
   label: string;
-  icon: { icon: IconType; color: string };
+  icon: { icon: As; color: string };
 }
 
 export interface NavLinkInterface {

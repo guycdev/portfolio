@@ -20,13 +20,17 @@ import convexSvg from "@/components/icons/convex-svg";
 import { As } from "@chakra-ui/react";
 import { TbBrandVite, TbShoe } from "react-icons/tb";
 import { SiSelenium } from "react-icons/si";
-import { IconType } from "react-icons";
 import { AllTechInterface } from "./interfaces";
 import ZxSvg from "@/components/icons/zx-xvg";
 import GoogleSvg from "@/components/icons/google-svg";
 import OsuSvg from "@/components/icons/osu-svg";
 import RyersonSvg from "@/components/icons/ryerson-svg";
 import { BiNetworkChart } from "react-icons/bi";
+import PythonSvg from "@/components/icons/python-svg";
+import FigmaSvg from "@/components/icons/figma-svg";
+import ViteSvg from "@/components/icons/vite-svg";
+import EthersSvg from "@/components/icons/ethers-svg";
+import GoogleMapsSvg from "@/components/icons/google-maps-svg";
 
 interface PreformattedNodes {
   id: string;
@@ -45,7 +49,7 @@ interface PreformattedNodes {
   };
 }
 
-const techIcons: { [key: string]: { icon: IconType; color: string } } = {
+const techIcons: { [key: string]: { icon: As; color: string } } = {
   "React.js": {
     icon: FaReact,
     color: "#5ed3f3",
@@ -75,7 +79,7 @@ const techIcons: { [key: string]: { icon: IconType; color: string } } = {
     color: "#efd81d",
   },
   "Google APIs": {
-    icon: SiGooglemaps,
+    icon: GoogleMapsSvg,
     color: "#df4133",
   },
   MySQL: {
@@ -83,11 +87,11 @@ const techIcons: { [key: string]: { icon: IconType; color: string } } = {
     color: "#e89b42",
   },
   Figma: {
-    icon: FiFigma,
+    icon: FigmaSvg,
     color: "#9d56f7",
   },
   Python: {
-    icon: DiPython,
+    icon: PythonSvg,
     color: "#f7cc42",
   },
   OpenAI: {
@@ -95,11 +99,11 @@ const techIcons: { [key: string]: { icon: IconType; color: string } } = {
     color: "#10a481",
   },
   Vite: {
-    icon: TbBrandVite,
+    icon: ViteSvg,
     color: "#9665fe",
   },
   "Ethers.js": {
-    icon: FaEthereum,
+    icon: EthersSvg,
     color: "#bbc6ed",
   },
   HTML: {
