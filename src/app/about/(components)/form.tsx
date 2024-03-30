@@ -5,7 +5,6 @@ import { Input } from "../../../components/ui/input";
 import { cn } from "@/utils/cn";
 import { PiGithubLogo } from "react-icons/pi";
 import { BsTwitterX } from "react-icons/bs";
-import { SiDevpost } from "react-icons/si";
 
 export function SignupFormDemo() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

@@ -9,8 +9,8 @@ import ReactFlow, {
   MiniMap,
 } from "reactflow";
 import "reactflow/dist/style.css";
-import ExperienceNode from "./nodes/ExperienceNode";
-import { allNodes } from "@/utils/nodes";
+import CustomNode from "./nodes/Node";
+import { formattedNodes } from "@/utils/nodes";
 import { useReactFlow } from "reactflow";
 import { useSetFlowContext } from "@/context/SetFlowContext";
 
@@ -28,7 +28,7 @@ function Flow() {
   }, [attributeFilter, selectedFlow]);
 
   const nodes: Node[] = useMemo(() => {
-    return allNodes
+    return formattedNodes
       .filter((node) =>
         attributeFilter
           ? node.data.stack
@@ -55,7 +55,7 @@ function Flow() {
   }, [nodes]);
 
   const nodeTypes: NodeTypes = useMemo(() => {
-    return { node: ExperienceNode };
+    return { node: CustomNode };
   }, []);
 
   function nodeColor(node: any) {

@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  AllTechInterface,
-  NavLinkInterface,
-  NodeType,
-} from "@/utils/interfaces";
+import { NavLinkInterface } from "@/utils/interfaces";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
-import { IconType } from "react-icons";
 import { Icon } from "@chakra-ui/react";
 
 interface FlowNavLinkProps {

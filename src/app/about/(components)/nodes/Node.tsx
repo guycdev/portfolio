@@ -1,40 +1,42 @@
-import { Icon, useDisclosure } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/react";
 import { Handle, Position } from "reactflow";
-import NodeModal from "../NodeModal";
 import { ExperienceNodeData } from "@/utils/interfaces";
-import { twMerge } from "tailwind-merge";
+import { FaGithub } from "react-icons/fa";
 
 interface ExperienceNodeProps {
   data: ExperienceNodeData;
 }
 
-function ExperienceNode({ data }: ExperienceNodeProps) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
+function Node({ data }: ExperienceNodeProps) {
   const sectionColors = {
-    experiences: "bg-[#4A90E2]",
+    experiences: "bg-[#c30010]",
     achievements: "bg-[#F5A623]",
     projects: "bg-[#7ED321]",
     education: "bg-[#003366]",
     involvement: "bg-[#9B59B6]",
   };
 
-  const { title, role, date, description, tag, section, stack } = data;
-
-  const isExpandable = data.bullets.length > 0;
+  const { title, role, date, description, tag, section, stack, github } = data;
 
   return (
     <>
-      <div
-        className={twMerge(
-          "nodrag flex rounded-lg border border-neutral-700 bg-bg p-3",
-          isExpandable && "clickable",
-        )}
-        onClick={onOpen}
-      >
+      <div className="nodrag flex rounded-lg border border-neutral-700 bg-bg p-3">
         <Handle type="target" position={Position.Top} />
-        <div className="px-2 py-6 ">
+        <div className="item flex flex-col items-center justify-between p-2 pt-6">
           <p className="text-xs text-primary">{date}</p>
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              className="clickable rounded-full px-0.5 py-1"
+            >
+              <Icon
+                as={FaGithub}
+                boxSize={7}
+                className="fill-primary transition-all hover:fill-secondary"
+              />
+            </a>
+          )}
         </div>
         <div className="flex max-w-[429.797px] flex-col gap-2 p-2">
           <div className="flex flex-col">
@@ -65,11 +67,8 @@ function ExperienceNode({ data }: ExperienceNodeProps) {
         </div>
         <Handle type="source" position={Position.Bottom} id="a" />
       </div>
-      {isExpandable && (
-        <NodeModal isOpen={isOpen} onClose={onClose} data={data} />
-      )}
     </>
   );
 }
 
-export default ExperienceNode;
+export default Node;

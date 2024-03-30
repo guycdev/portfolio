@@ -5,6 +5,8 @@ import { BsTwitterX } from "react-icons/bs";
 import { PiGithubLogo } from "react-icons/pi";
 import { SiDevpost } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
+import { IoDocumentTextSharp } from "react-icons/io5";
+import { Tooltip } from "@chakra-ui/react";
 
 // Define animation variants for the parent
 const containerVariants = {
@@ -31,24 +33,47 @@ export const AboutFooter = ({
   iconStyles: string;
 }) => {
   const icons = [
-    { link: "https://www.linkedin.com/feed/", icon: FaLinkedin },
-    { link: "https://www.linkedin.com/feed/", icon: BsTwitterX },
-    { link: "https://www.linkedin.com/feed/", icon: PiGithubLogo },
-    { link: "https://www.linkedin.com/feed/", icon: SiDevpost },
+    {
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/feed/",
+      icon: FaLinkedin,
+    },
+    {
+      label: "Twitter",
+      link: "https://www.linkedin.com/feed/",
+      icon: BsTwitterX,
+    },
+    {
+      label: "GitHub",
+      link: "https://www.linkedin.com/feed/",
+      icon: PiGithubLogo,
+    },
+    {
+      label: "DevPost",
+      link: "https://www.linkedin.com/feed/",
+      icon: SiDevpost,
+    },
+    {
+      label: "Resume",
+      link: "https://www.linkedin.com/feed/",
+      icon: IoDocumentTextSharp,
+    },
   ];
 
   const MotionLink = motion(Link);
 
-  const iconArr = icons.map(({ link, icon: LinkIcon }, index) => (
-    <MotionLink
-      key={link + index}
-      href={link}
-      variants={childVariants}
-      className="flex items-center"
-      target="_blank"
-    >
-      <LinkIcon className={iconStyles} />
-    </MotionLink>
+  const iconArr = icons.map(({ link, icon: LinkIcon, label }, index) => (
+    <Tooltip label={label} placement="top" className="bg-primary">
+      <MotionLink
+        key={link + index}
+        href={link}
+        variants={childVariants}
+        className="flex items-center"
+        target="_blank"
+      >
+        <LinkIcon className={iconStyles} />
+      </MotionLink>
+    </Tooltip>
   ));
 
   return (

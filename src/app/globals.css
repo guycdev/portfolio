@@ -10,12 +10,12 @@
 
   *::-webkit-scrollbar-track {
     border-radius: 100vh;
-    background: black;
   }
 
   *::-webkit-scrollbar-thumb {
     background: #f1f5f9;
     border: 1px solid #cbd5e1;
+    border-radius: 5px;
   }
   .css-selector {
     background: linear-gradient(125deg, #0f172a, #e2e8f0);

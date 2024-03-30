@@ -15,7 +15,6 @@ export interface ExperienceNodeData {
   date: string;
   description: string;
   img: string;
-  bullets: string[];
   source: string;
   icons: IconType[];
   stack: {
@@ -23,15 +22,16 @@ export interface ExperienceNodeData {
     icon: As;
     color: string;
   }[];
-  link: string;
   section: NodeType;
   tag: string;
   code: string | undefined;
+  github: string;
 }
 
 export interface AllTechInterface {
   value: string;
   label: string;
+  icon: { icon: IconType; color: string };
 }
 
 export interface NavLinkInterface {
