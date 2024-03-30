@@ -3,6 +3,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Animators from "./animators";
 import { Metadata } from "next";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         {/* Favicon for most browsers */}
         <link rel="icon" href="/favicon.ico" />
 
@@ -49,7 +50,7 @@ export default function RootLayout({
 
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#ffffff" />
-      </head>
+      </Head>
       <body
         className={`h-screen bg-bg ${inter.className} dark overflow-hidden`}
       >
