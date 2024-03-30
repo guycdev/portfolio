@@ -176,9 +176,9 @@ const allNodes: PreformattedNodes[] = [
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      title: "Beaverhacks Winter 2024",
+      title: "2nd Place Hackathon Winner",
       locationIcon: OsuSvg,
-      role: "2nd Place Hackathon Winner",
+      role: "Beaverhacks Winter 2024",
       date: "Mar 2024",
       description:
         "Beatbytes is a free to use audio production application that provides its users with maximum flexibility by offering file uploads and instrumental configruations.",
@@ -193,9 +193,9 @@ const allNodes: PreformattedNodes[] = [
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      title: "Google Hacks x Beaverhacks",
+      role: "Google Hacks x Beaverhacks",
       locationIcon: GoogleSvg,
-      role: "1st Place Hackathon Winner",
+      title: "1st Place Hackathon Winner",
       date: "Nov 2023",
       description:
         "Outbreak Navigator, is a real-time, crowdsourced map app to safely locate essentials and steer clear of danger zones in crises.",
@@ -217,9 +217,9 @@ const allNodes: PreformattedNodes[] = [
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      title: "Ryerson RIT Competition",
+      role: "Ryerson RIT Competition",
       locationIcon: RyersonSvg,
-      role: "1st Place Hackathon Winner",
+      title: "1st Place Hackathon Winner",
       date: "Jan 2023 - Apr 2023",
       description:
         "Developed a high-frequency trading bot in Python using the OpenAI's API, regex, and cross trading strategies to facilitate a sentiment driven strategy.",
