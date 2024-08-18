@@ -46,9 +46,8 @@ const HomeInformation = () => {
           <p className="3xl:text-lg text-md text-balance text-header	">
             <AnimatedText
               words="
-            In 2020, I discovered the world of programming. Since then I have
-            made it my mission to turn that passion into a career. Fast-forward
-            to today and I am currently in the process of completing my Bachelor
+            In 2020, I discovered the world of programming and have been addicted ever since. 
+            Fast-forward to today and I am currently in the process of completing my Bachelor
             in Computer Science while having already completed my Bachelor in
             Finance. I am working as a Software Engineering intern at ZeroX
             gaming, and love participating and being involved with my school’s

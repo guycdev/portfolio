@@ -46,6 +46,7 @@ interface PreformattedNodes {
     section: string;
     tag: string;
     github?: string;
+    bullets?: string[];
   };
 }
 
@@ -130,16 +131,40 @@ const techIcons: { [key: string]: { icon: As; color: string } } = {
 
 const allNodes: PreformattedNodes[] = [
   {
+    id: "node-9",
+    type: "node",
+    position: { x: 0, y: 0 },
+    data: {
+      title: "ZeroX Gaming",
+      locationIcon: ZxSvg,
+      role: "Software Engineer Intern - Web3 Team",
+      date: "May 2024 - Present",
+      description:
+        "Developing an app store where users are able to interact with over 200+ applications and play in app games. Designed the frontend, backend, security, and CI/CD protocols neccessary to maintain the app.",
+      stack: [
+        "TypeScript",
+        "React.js",
+        "Node.js",
+        "AWS Lambda",
+        "Vite",
+        "Python",
+        "Figma",
+      ],
+      section: "experiences",
+      tag: "Experience",
+    },
+  },
+  {
     id: "node-4",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
       title: "ZeroX Gaming",
       locationIcon: ZxSvg,
-      role: "Software Engineer Intern",
-      date: "Jan 2024 - Present",
+      role: "Software Engineer Intern - Web2 Team",
+      date: "Jan 2024 - Apr 2024",
       description:
-        "My responsibilities currently range from implementing UI components from design to implementation, developing CRUD endpoints and file management scripts on our serverless backend, and optimizing smart contract interactions by adhering to Web3 best practices.",
+        "Designed and implemented a SaaS dashboard with TypeScript, React, and Ethers.js. I also created a brand-specific Chakra UI style system, deployed on NPM and utilized across three applications.",
       stack: [
         "TypeScript",
         "React.js",

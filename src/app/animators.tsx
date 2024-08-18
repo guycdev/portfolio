@@ -1,4 +1,5 @@
 "use client";
+import { useClientContext } from "@/context/ClientContext";
 import { motion } from "framer-motion";
 import AnimatedCursor from "react-animated-cursor";
 
@@ -7,26 +8,32 @@ const Animators = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
+  const { isMobileClient } = useClientContext();
+
+  console.log(isMobileClient);
+
   return (
     <>
-      <AnimatedCursor
-        clickables={[".clickable"]}
-        innerSize={8}
-        outerSize={35}
-        innerScale={1}
-        outerScale={2}
-        outerAlpha={0}
-        /**@ts-ignore */
-        hasBlendMode={true}
-        innerStyle={{
-          backgroundColor: "#f1f5f9",
-          zIndex: 15000,
-        }}
-        outerStyle={{
-          border: "3px solid #64748b",
-          zIndex: 15000,
-        }}
-      />
+      {!isMobileClient && (
+        <AnimatedCursor
+          clickables={[".clickable"]}
+          innerSize={8}
+          outerSize={35}
+          innerScale={1}
+          outerScale={2}
+          outerAlpha={0}
+          /**@ts-ignore */
+          hasBlendMode={true}
+          innerStyle={{
+            backgroundColor: "#f1f5f9",
+            zIndex: 15000,
+          }}
+          outerStyle={{
+            border: "3px solid #64748b",
+            zIndex: 15000,
+          }}
+        />
+      )}
 
       <div className="flex h-screen overflow-hidden p-2">
         <motion.div

@@ -12,7 +12,6 @@ const Home = () => {
   const [attributeFilter, setAttributeFilter] =
     useState<AllTechInterface | null>(null);
 
-  //add some gameified skill tree thing to showcase my favorite tech
   return (
     <SetFlowContext.Provider
       value={{
