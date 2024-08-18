@@ -278,10 +278,10 @@ const allNodes: PreformattedNodes[] = [
     data: {
       title: "Analog Designs",
       locationIcon: BsFillNodePlusFill,
-      role: "Freelance Design Platform",
-      date: "May 2023",
+      role: "Freelance Design Studio",
+      date: "May 2023 - Dec 2023",
       description:
-        "Analog Designs is a full stack solution for managing my freelance client's current orders. Built utilizing in-house authentication users are able to manage their orders with a CRUD dashboard.",
+        "Delivered 10 custom web applications for diverse clients using React, CSS, WordPress, and Framer, while optimizing SEO and mobile responsiveness, resulting in over 2000 monthly visits and a 3% conversion rate.",
       stack: [
         "React.js",
         "Node.js",
@@ -293,8 +293,8 @@ const allNodes: PreformattedNodes[] = [
         "Passport.js",
         "AWS EC2",
       ],
-      section: "projects",
-      tag: "Project",
+      section: "experiences",
+      tag: "Experience",
       github: "https://github.com/guycdev/Analog-Designs",
     },
   },
@@ -305,13 +305,13 @@ const allNodes: PreformattedNodes[] = [
     data: {
       title: "SNKRS Solutions",
       locationIcon: TbShoe,
-      role: "Retail Arbitrage Monitors",
+      role: "Retail Arbitrage",
       date: "Apr 2020 - Sep 2022",
       description:
-        "Developed a suite of web scrapers to facilitate a profitable retail arbitrage strategy over a two year period.",
+        "Built 20+ Python monitors and automation tools with Requests and Selenium for a retail arbitrage strategy through selling scrapers to 15+ business partners and products to B2B partners.",
       stack: ["Python", "Selenium", "Google Cloud"],
-      section: "projects",
-      tag: "Project",
+      section: "experiences",
+      tag: "Experience",
       github: "https://github.com/guycdev/snkrs_solutions_suite",
     },
   },
