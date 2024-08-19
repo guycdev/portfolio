@@ -28,7 +28,7 @@ const Home = () => {
     >
       <div className="flex  h-[100%] w-[100%]">
         <div
-          className="content- absolute left-8 top-8 z-50 flex h-9 w-9 items-center justify-center bg-green-500 text-red-500"
+          className="content- clickable absolute left-8 top-8 z-50 flex h-9 w-9 items-center justify-center rounded-full bg-accent text-bg"
           onClick={() => setIsInfoOpen((prev) => !prev)}
         >
           <Icon as={isInfoOpen ? FaX : FaInfo} />

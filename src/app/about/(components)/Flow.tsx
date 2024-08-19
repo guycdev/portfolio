@@ -16,10 +16,6 @@ import { useSetFlowContext } from "@/context/SetFlowContext";
 
 function Flow() {
   const context = useSetFlowContext();
-  const [zoomedNode, setZoomedNode] = useState<null | {
-    x: number;
-    y: number;
-  }>(null);
 
   const reactFlow = useReactFlow();
 

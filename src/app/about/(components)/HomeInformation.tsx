@@ -27,7 +27,6 @@ const HomeInformation = ({
   useOutsideClick({
     ref: overlayRef,
     handler: () => {
-      console.log("Hello");
       setIsOpen(false);
     },
   });
@@ -45,7 +44,7 @@ const HomeInformation = ({
       <div
         className={twMerge(
           "z-1 absolute left-0 top-0 h-[100%] w-[100%] bg-bg transition duration-300",
-          isOpen ? "opacity-70" : "opacity-0",
+          isOpen ? "opacity-80" : "opacity-0",
         )}
       />
       <FlowNavigation setInfoOpen={setIsOpen} />

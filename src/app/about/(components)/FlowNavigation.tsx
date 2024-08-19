@@ -24,12 +24,12 @@ const navArr: NavLinkInterface[] = [
     label: "Experiences",
     value: "experiences",
   },
-  {
-    filledIcon: IoTrophy,
-    hollowIcon: IoTrophyOutline,
-    label: "Achievements",
-    value: "achievements",
-  },
+  // {
+  //   filledIcon: IoTrophy,
+  //   hollowIcon: IoTrophyOutline,
+  //   label: "Achievements",
+  //   value: "achievements",
+  // },
   {
     filledIcon: PiProjectorScreenChartFill,
     hollowIcon: PiProjectorScreenChart,
