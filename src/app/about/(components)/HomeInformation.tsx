@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useRef } from "react";
 import FlowNavigation from "./FlowNavigation";
 import Link from "next/link";
 import { AboutFooter } from "./AboutFooter";
@@ -6,17 +6,51 @@ import { motion } from "framer-motion";
 import { FormModal } from "@/app/about/(components)/form-modal";
 import AnimatedText from "@/components/AnimatedText";
 import { IoChevronBackOutline } from "react-icons/io5";
+import { twMerge } from "tailwind-merge";
+import { useOutsideClick } from "@chakra-ui/react";
 
-const HomeInformation = () => {
+const HomeInformation = ({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const iconStyles = useMemo(() => {
     return "text-primary w-8 h-8 hover:text-accent cursor-none clickable transition-all hover:scale-110 duration-300 3xl:w-9 3xl:h-9";
   }, []);
 
   const MotionLink = motion(Link);
 
+  const overlayRef = useRef(null);
+
+  useOutsideClick({
+    ref: overlayRef,
+    handler: () => {
+      console.log("Hello");
+      setIsOpen(false);
+    },
+  });
+
   return (
-    <motion.div className="relative h-[100%] w-[100%] flex-1 rounded-s-border bg-bg p-3">
-      <MotionLink
+    <motion.div
+      className={twMerge(
+        "absolute left-0 top-0 z-10 flex h-[100%] w-[100%] flex-1 items-center justify-center rounded-s-border p-3",
+        isOpen
+          ? "pointer-events-auto opacity-100"
+          : "pointer-events-none z-30 opacity-0",
+      )}
+      ref={overlayRef}
+    >
+      <div
+        className={twMerge(
+          "z-1 absolute left-0 top-0 h-[100%] w-[100%] bg-bg transition duration-300",
+          isOpen ? "opacity-70" : "opacity-0",
+        )}
+      />
+      <FlowNavigation setInfoOpen={setIsOpen} />
+
+      {/* <MotionLink
         href="/"
         className="absolute left-4 top-4 flex items-center"
         initial={{ opacity: 0 }}
@@ -60,7 +94,7 @@ const HomeInformation = () => {
         <AboutFooter iconStyles={iconStyles}>
           <FormModal />
         </AboutFooter>
-      </div>
+      </div> */}
     </motion.div>
   );
 };

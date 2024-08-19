@@ -60,7 +60,11 @@ const containerVariants = {
   },
 };
 
-const FlowNavigation = () => {
+const FlowNavigation = ({
+  setInfoOpen,
+}: {
+  setInfoOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const context = useSetFlowContext();
   const { setSelectedFlow, selectedFlow, setAttributeFilter } = context;
 
@@ -75,13 +79,14 @@ const FlowNavigation = () => {
         setSelectedFlow !== undefined ? setSelectedFlow(nav.value) : undefined;
         setAttributeFilter(null);
         setSelectedFlowHistory("");
+        setInfoOpen(false);
       }}
     />
   ));
 
   return (
     <motion.div
-      className="flex w-fit flex-col gap-6"
+      className="z-50 flex w-fit gap-6"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -89,6 +94,7 @@ const FlowNavigation = () => {
       <CustomSelectBox
         selectedFlowHistory={selectedFlowHistory}
         setSelectedFlowHistory={setSelectedFlowHistory}
+        setInfoOpen={setInfoOpen}
       />
       {navLinkArr}
       {/* add another filter if the above is active to filter by activity */}
