@@ -1,13 +1,8 @@
 import React, { useMemo, useRef } from "react";
 import FlowNavigation from "./FlowNavigation";
 import Link from "next/link";
-import { AboutFooter } from "./AboutFooter";
 import { motion } from "framer-motion";
-import { FormModal } from "@/app/about/(components)/form-modal";
-import AnimatedText from "@/components/AnimatedText";
-import { IoChevronBackOutline } from "react-icons/io5";
 import { twMerge } from "tailwind-merge";
-import { useOutsideClick } from "@chakra-ui/react";
 
 const HomeInformation = ({
   isOpen,
@@ -24,13 +19,6 @@ const HomeInformation = ({
 
   const overlayRef = useRef(null);
 
-  useOutsideClick({
-    ref: overlayRef,
-    handler: () => {
-      setIsOpen(false);
-    },
-  });
-
   return (
     <motion.div
       className={twMerge(
@@ -39,9 +27,10 @@ const HomeInformation = ({
           ? "pointer-events-auto opacity-100"
           : "pointer-events-none z-30 opacity-0",
       )}
-      ref={overlayRef}
     >
       <div
+        // ref={overlayRef}
+        onClick={() => setIsOpen(false)}
         className={twMerge(
           "z-1 absolute left-0 top-0 h-[100%] w-[100%] bg-bg transition duration-300",
           isOpen ? "opacity-80" : "opacity-0",

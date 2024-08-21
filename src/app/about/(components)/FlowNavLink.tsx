@@ -31,7 +31,10 @@ const FlowNavLink = ({
         isActive &&
           "ml-2 w-[9.5rem] scale-110 border-accent font-bold text-accent",
       )}
-      onClick={onClick}
+      onClick={(e) => {
+        e.stopPropagation();
+        onClick();
+      }}
       variants={childVariants}
     >
       <Icon as={isActive ? data.filledIcon : data.hollowIcon} />
