@@ -131,7 +131,7 @@ const techIcons: { [key: string]: { icon: As; color: string } } = {
 
 const allNodes: PreformattedNodes[] = [
   {
-    id: "node-9",
+    id: "node-1",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -155,7 +155,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-4",
+    id: "node-2",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -181,7 +181,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-6",
+    id: "node-3",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -197,7 +197,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-1",
+    id: "node-4",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -214,7 +214,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-2",
+    id: "node-5",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -238,7 +238,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-3",
+    id: "node-6",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -255,7 +255,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-5",
+    id: "node-7",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -272,7 +272,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-10",
+    id: "node-8",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -299,7 +299,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-11",
+    id: "node-9",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -317,7 +317,7 @@ const allNodes: PreformattedNodes[] = [
   },
 
   {
-    id: "node-7",
+    id: "node-10",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -333,7 +333,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-8",
+    id: "node-11",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -349,7 +349,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-9",
+    id: "node-12",
     type: "node",
     position: { x: 0, y: 0 },
     data: {

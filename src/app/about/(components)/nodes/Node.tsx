@@ -1,7 +1,7 @@
 import { Icon } from "@chakra-ui/react";
 import { Handle, Position, useNodes, useReactFlow } from "reactflow";
 import { ExperienceNodeData } from "@/utils/interfaces";
-import { FaArrowLeft, FaArrowRight, FaGithub } from "react-icons/fa";
+import { FaArrowDown, FaArrowUp, FaGithub } from "react-icons/fa";
 
 interface ExperienceNodeProps {
   data: ExperienceNodeData;
@@ -40,9 +40,8 @@ function Node({ data }: ExperienceNodeProps) {
   );
 
   const handleClick = (e: React.MouseEvent, id: string) => {
-    console.log(id);
     e.stopPropagation();
-    reactFlow.fitView({ nodes: [{ id }], duration: 100 });
+    reactFlow.fitView({ nodes: [{ id }], duration: 300 });
   };
 
   return (
@@ -101,24 +100,22 @@ function Node({ data }: ExperienceNodeProps) {
         )}
       </div>
       <Handle type="source" position={Position.Bottom} id="a" />
-      <div className="absolute bottom-3 right-3 flex gap-2">
-        {currentIndex - 1 >= 0 && (
-          <div
-            className=" flex h-8 w-8 items-center justify-center rounded-md bg-slate-800 text-text"
-            onClick={(e) => handleClick(e, nodeData[currentIndex - 1].id)}
-          >
-            <Icon as={FaArrowLeft} className="" />
-          </div>
-        )}
-        {currentIndex + 1 < nodeData.length && (
-          <div
-            className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-800 text-text"
-            onClick={(e) => handleClick(e, nodeData[currentIndex + 1].id)}
-          >
-            <Icon as={FaArrowRight} className="" />
-          </div>
-        )}
-      </div>
+      {currentIndex - 1 >= 0 && (
+        <div
+          className="clickable absolute -top-4 left-[47.5%] flex h-8 w-8 items-center justify-center rounded-md border-[1px] border-neutral-700 bg-bg text-white transition duration-300 hover:border-white hover:bg-neutral-700"
+          onClick={(e) => handleClick(e, nodeData[currentIndex - 1].id)}
+        >
+          <Icon as={FaArrowUp} />
+        </div>
+      )}
+      {currentIndex + 1 < nodeData.length && (
+        <div
+          className="clickable absolute -bottom-5 left-[47.5%] flex h-8 w-8 items-center justify-center rounded-md border-[1px] border-neutral-700 bg-bg text-white transition duration-300 hover:border-white hover:bg-neutral-700"
+          onClick={(e) => handleClick(e, nodeData[currentIndex + 1].id)}
+        >
+          <Icon as={FaArrowDown} />
+        </div>
+      )}
     </div>
   );
 }
