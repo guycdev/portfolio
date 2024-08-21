@@ -131,7 +131,7 @@ const techIcons: { [key: string]: { icon: As; color: string } } = {
 
 const allNodes: PreformattedNodes[] = [
   {
-    id: "node-9",
+    id: "node-1",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -155,7 +155,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-4",
+    id: "node-2",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -181,7 +181,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-6",
+    id: "node-3",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -197,28 +197,28 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-1",
+    id: "node-4",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
       title: "2nd Place Hackathon Winner",
       locationIcon: OsuSvg,
-      role: "Beaverhacks Winter 2024",
+      role: "BeatBytes - Beaverhacks Winter 2024",
       date: "Mar 2024",
       description:
         "Beatbytes is a free to use audio production application that provides its users with maximum flexibility by offering file uploads and instrumental configruations.",
       stack: ["TypeScript", "React.js", "Next.js", "Convex", "Tone.js"],
-      section: "achievements",
-      tag: "Hackathon",
+      section: "projects",
+      tag: "Projects",
       github: "https://github.com/Nyumat/beaverhacks",
     },
   },
   {
-    id: "node-2",
+    id: "node-5",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      role: "Google Hacks x Beaverhacks",
+      role: "Outbreak Navigator - Google Hacks x Beaverhacks",
       locationIcon: GoogleSvg,
       title: "1st Place Hackathon Winner",
       date: "Nov 2023",
@@ -232,30 +232,30 @@ const allNodes: PreformattedNodes[] = [
         "MySQL",
         "Figma",
       ],
-      section: "achievements",
-      tag: "Hackathon",
+      section: "projects",
+      tag: "Projects",
       github: "https://github.com/guycdev/outbreak-navigator",
     },
   },
   {
-    id: "node-3",
+    id: "node-6",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      role: "Ryerson RIT Competition",
+      role: "HFT Bot - Ryerson RIT Competition",
       locationIcon: RyersonSvg,
       title: "1st Place Hackathon Winner",
       date: "Jan 2023 - Apr 2023",
       description:
         "Developed a high-frequency trading bot in Python using the OpenAI's API, regex, and cross trading strategies to facilitate a sentiment driven strategy.",
       stack: ["Python", "OpenAI"],
-      section: "achievements",
-      tag: "Hackathon",
+      section: "projects",
+      tag: "Projects",
       github: "https://github.com/guycdev/HFT-Case-Comp-case-1-2",
     },
   },
   {
-    id: "node-5",
+    id: "node-7",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -272,7 +272,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-10",
+    id: "node-8",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -299,7 +299,7 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-11",
+    id: "node-9",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -317,7 +317,7 @@ const allNodes: PreformattedNodes[] = [
   },
 
   {
-    id: "node-7",
+    id: "node-10",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -333,23 +333,23 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-8",
+    id: "node-11",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
       title: "Sponsorship Coordinator",
       locationIcon: OsuSvg,
       role: "Oregon State Hackathon Fund",
-      date: "Jan 2024 - Present",
+      date: "Jan 2024 - Apr 2024",
       description:
-        "Oversaw the allocation of a portfolio with $500K AUM, making weekly stock pitches and critiques to a student senate of 25 other students.",
+        "Spearheaded industry partner outreach for event sponsorship's, judging panels, prize funding, and discounts.",
       stack: [],
       section: "involvement",
       tag: "Involvement",
     },
   },
   {
-    id: "node-9",
+    id: "node-12",
     type: "node",
     position: { x: 0, y: 0 },
     data: {

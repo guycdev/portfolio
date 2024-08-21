@@ -10,11 +10,13 @@ import { twMerge } from "tailwind-merge";
 interface Props {
   selectedFlowHistory: NodeType;
   setSelectedFlowHistory: React.Dispatch<React.SetStateAction<NodeType>>;
+  setInfoOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const CustomSelectBox = ({
   selectedFlowHistory,
   setSelectedFlowHistory,
+  setInfoOpen,
 }: Props) => {
   const context = useSetFlowContext();
   const { setSelectedFlow, selectedFlow, setAttributeFilter, attributeFilter } =
@@ -43,6 +45,7 @@ const CustomSelectBox = ({
     setIsOpen(false);
     setSelectedFlowHistory(selectedFlow);
     setSelectedFlow("");
+    setInfoOpen(false);
   };
 
   const handleClear = (e: React.MouseEvent<SVGElement, MouseEvent>) => {

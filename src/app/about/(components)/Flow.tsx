@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import ReactFlow, {
   Background,
@@ -41,9 +41,9 @@ function Flow() {
 
   useEffect(() => {
     setTimeout(() => {
-      if (nodes.length === 1) {
-        reactFlow.fitView({ includeHiddenNodes: true });
-      }
+      // if (nodes.length === 1) {
+      reactFlow.fitView({ includeHiddenNodes: true });
+      // }
     }, 100);
   }, [attributeFilter, selectedFlow, reactFlow, nodes]);
 
@@ -72,7 +72,7 @@ function Flow() {
   }
 
   return (
-    <div className="h-[100%] flex-1 rounded-e-border bg-bg p-3">
+    <div className="h-[100%] w-[100%] flex-1 rounded-e-border bg-bg">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 2.1, duration: 0.8 } }}
