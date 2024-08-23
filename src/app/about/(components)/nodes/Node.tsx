@@ -46,7 +46,7 @@ function Node({ data }: ExperienceNodeProps) {
 
   return (
     <div
-      className="nodrag relative flex rounded-lg border border-neutral-700 bg-bg p-3 pr-10"
+      className="nodrag relative flex min-w-[600px] rounded-lg border border-neutral-700 bg-bg p-3 pr-10"
       onClick={(e) => handleClick(e, currentNode?.id as string)}
     >
       <Handle type="target" position={Position.Top} />

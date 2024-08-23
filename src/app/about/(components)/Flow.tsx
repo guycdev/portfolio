@@ -72,7 +72,7 @@ function Flow() {
   }
 
   return (
-    <div className="h-[100%] w-[100%] flex-1 rounded-e-border bg-bg">
+    <div className="h-[100%] w-[100%] flex-1 overflow-hidden rounded-e-border bg-bg">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 2.1, duration: 0.8 } }}
@@ -85,7 +85,7 @@ function Flow() {
           fitView
           className="rounded-xl bg-bg "
         >
-          {nodes.length > 2 && (
+          {nodes.length > 2 && window.innerWidth > 750 && (
             <MiniMap
               position="top-right"
               nodeColor={nodeColor}
