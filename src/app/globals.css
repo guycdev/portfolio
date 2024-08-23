@@ -27,6 +27,10 @@
   }
 }
 
+html {
+  overflow: hidden;
+}
+
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 0% 51%;

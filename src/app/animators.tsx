@@ -10,8 +10,6 @@ const Animators = ({
 }>) => {
   const { isMobileClient } = useClientContext();
 
-  console.log(isMobileClient);
-
   return (
     <>
       {!isMobileClient && (

@@ -54,9 +54,9 @@ export default function RootLayout({
       <body
         className={`h-screen bg-bg ${inter.className} dark overflow-hidden`}
       >
-        <Animators>
-          <Providers>{children}</Providers>
-        </Animators>
+        <Providers>
+          <Animators>{children}</Animators>
+        </Providers>
       </body>
     </html>
   );
