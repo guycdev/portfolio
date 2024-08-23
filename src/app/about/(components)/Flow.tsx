@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import ReactFlow, {
   Background,
@@ -13,11 +13,14 @@ import CustomNode from "./nodes/Node";
 import { formattedNodes } from "@/utils/nodes";
 import { useReactFlow } from "reactflow";
 import { useSetFlowContext } from "@/context/SetFlowContext";
+import { useClientContext } from "@/context/ClientContext";
 
 function Flow() {
   const context = useSetFlowContext();
 
   const reactFlow = useReactFlow();
+
+  const { isMobileClient } = useClientContext();
 
   const { attributeFilter, selectedFlow } = context;
 
@@ -85,7 +88,7 @@ function Flow() {
           fitView
           className="rounded-xl bg-bg "
         >
-          {nodes.length > 2 && window.innerWidth > 750 && (
+          {nodes.length > 2 && !isMobileClient && (
             <MiniMap
               position="top-right"
               nodeColor={nodeColor}
