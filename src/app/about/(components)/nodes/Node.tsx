@@ -46,7 +46,7 @@ function Node({ data }: ExperienceNodeProps) {
 
   return (
     <div
-      className="nodrag relative flex min-w-[600px] rounded-lg border border-neutral-700 bg-bg p-3 pr-10"
+      className="nodrag relative flex min-w-[600px] justify-between rounded-lg border border-neutral-700 bg-bg p-3"
       onClick={(e) => handleClick(e, currentNode?.id as string)}
     >
       <Handle type="target" position={Position.Top} />
@@ -73,7 +73,7 @@ function Node({ data }: ExperienceNodeProps) {
               <Icon as={locationIcon} color="white" />
               <p className="font-semibold text-accent">{title}</p>
             </div>
-            <div className="absolute right-3 top-3 flex w-fit items-center gap-1 rounded-xl bg-neutral-800 px-3 py-0.5">
+            <div className=" flex w-fit items-center gap-1 rounded-xl bg-neutral-800 px-3 py-0.5">
               <div
                 className={`h-3 w-3 rounded-full ${section && sectionColors[section]}`}
               />
