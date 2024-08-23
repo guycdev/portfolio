@@ -33,7 +33,7 @@ const Animators = ({
         />
       )}
 
-      <div className="flex h-screen overflow-hidden p-2">
+      <div className="flex h-[100svh] overflow-hidden p-2">
         <motion.div
           className="w-screen flex-col overflow-hidden rounded-border p-2.5"
           initial={{

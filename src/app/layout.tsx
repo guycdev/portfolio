@@ -51,9 +51,7 @@ export default function RootLayout({
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <body
-        className={`h-screen bg-bg ${inter.className} dark overflow-hidden`}
-      >
+      <body className={` bg-bg ${inter.className} dark overflow-hidden`}>
         <Providers>
           <Animators>{children}</Animators>
         </Providers>

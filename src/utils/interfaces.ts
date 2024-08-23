@@ -27,6 +27,11 @@ export interface ExperienceNodeData {
   tag: string;
   code: string | undefined;
   github: string;
+  demos?: {
+    link: string;
+    img: string;
+    name: string;
+  }[];
 }
 
 export interface AllTechInterface {
