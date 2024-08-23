@@ -75,7 +75,7 @@ function Flow() {
   }
 
   return (
-    <div className="h-[100%] w-[100%] flex-1 overflow-hidden rounded-e-border bg-bg">
+    <div className="h-[100%] w-[100%] flex-1 overflow-hidden rounded-[12px] bg-bg ">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 2.1, duration: 0.8 } }}
