@@ -78,7 +78,7 @@ function Flow() {
     <div className="h-[100%] w-[100%] flex-1 overflow-hidden rounded-[12px] bg-bg ">
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 2.1, duration: 0.8 } }}
+        animate={{ opacity: 1, transition: { delay: 0.9, duration: 0.8 } }}
         className="h-[100%]"
       >
         <ReactFlow
@@ -86,8 +86,11 @@ function Flow() {
           edges={edges}
           nodeTypes={nodeTypes}
           fitView
-          className="rounded-xl bg-bg "
+          className="relative rounded-xl bg-bg"
         >
+          {/* <div className="border-1 absolute left-0 top-0 h-[100%] w-[100%] border-red-400 bg-red-500">
+            <GParticles />
+          </div> */}
           {nodes.length > 2 && !isMobileClient && (
             <MiniMap
               position="top-right"

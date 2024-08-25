@@ -36,7 +36,7 @@ const HomeInformation = ({
           isOpen ? "opacity-80" : "opacity-0",
         )}
       />
-      <FlowNavigation setInfoOpen={setIsOpen} />
+      {isOpen && <FlowNavigation setInfoOpen={setIsOpen} />}
 
       {/* <MotionLink
         href="/"

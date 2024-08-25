@@ -55,7 +55,8 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.4,
+      delay: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -86,7 +87,7 @@ const FlowNavigation = ({
 
   return (
     <motion.div
-      className="z-50 flex w-fit gap-6"
+      className="z-50 flex w-fit flex-col gap-16 lg:flex-row lg:gap-6"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
