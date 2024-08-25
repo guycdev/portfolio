@@ -32,8 +32,6 @@ const Home = () => {
 
   const nodes = useNodes();
 
-  console.log(nodes);
-
   return (
     <SetFlowContext.Provider
       value={{
