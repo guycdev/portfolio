@@ -5,7 +5,7 @@ import Flow from "./(components)/Flow";
 import HomeInformation from "./(components)/HomeInformation";
 import { AllTechInterface, NodeType } from "@/utils/interfaces";
 import { SetFlowContext } from "@/context/SetFlowContext";
-import { useReactFlow } from "reactflow";
+import { useNodes, useReactFlow } from "reactflow";
 import { Box, Icon } from "@chakra-ui/react";
 import { FaHome, FaInfo } from "react-icons/fa";
 import { FaMessage, FaX } from "react-icons/fa6";
@@ -15,6 +15,7 @@ import { GrPowerReset } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
 import { ContactForm } from "./(components)/form";
 import Link from "next/link";
+import { useClientContext } from "@/context/ClientContext";
 
 const Home = () => {
   const [selectedFlow, setSelectedFlow] = useState<NodeType>("experiences");
@@ -27,6 +28,12 @@ const Home = () => {
 
   const MotionDiv = motion(Box);
 
+  const { isMobileClient } = useClientContext();
+
+  const nodes = useNodes();
+
+  console.log(nodes);
+
   return (
     <SetFlowContext.Provider
       value={{
@@ -37,10 +44,10 @@ const Home = () => {
       }}
     >
       <div className="flex  h-[100%] w-[100%]">
-        <div className="absolute left-8 top-8 flex gap-2">
+        <div className="absolute left-3 top-3 flex gap-2 sm:left-8 sm:top-8">
           <motion.div
             className={twMerge(
-              "clickable z-40 flex h-9 w-9 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent  hover:shadow-glow-button",
+              "clickable z-40 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
               isInfoOpen && "hover:rotate-[180deg]",
             )}
             onClick={() => setIsInfoOpen((prev) => !prev)}
@@ -53,15 +60,24 @@ const Home = () => {
               },
             }}
           >
-            <Icon as={isInfoOpen ? FaX : TiThMenu} />
+            <Icon
+              as={isInfoOpen ? FaX : TiThMenu}
+              boxSize={isMobileClient ? 3 : "unset"}
+            />
           </motion.div>
           {!isInfoOpen && (
             <>
               <motion.div
                 className={twMerge(
-                  "clickable z-50 flex h-9 w-9 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:rotate-[360deg] hover:border-accent hover:bg-bg hover:text-accent  hover:shadow-glow-button",
+                  "clickable z-50 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:rotate-[360deg] hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
                 )}
-                onClick={() => reactFlow.fitView({ includeHiddenNodes: true })}
+                onClick={() => {
+                  reactFlow.fitView({
+                    includeHiddenNodes: true,
+                    maxZoom: 0.75,
+                    nodes: [{ id: nodes[0].id }],
+                  });
+                }}
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
@@ -71,11 +87,14 @@ const Home = () => {
                   },
                 }}
               >
-                <Icon as={GrPowerReset} />
+                <Icon
+                  as={GrPowerReset}
+                  boxSize={isMobileClient ? 3 : "unset"}
+                />
               </motion.div>
               <motion.div
                 className={twMerge(
-                  "clickable z-50 flex h-9 w-9 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent  hover:shadow-glow-button",
+                  "clickable z-50 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
                 )}
                 onClick={() => setIsModalOpen(true)}
                 initial={{ opacity: 0 }}
@@ -87,13 +106,13 @@ const Home = () => {
                   },
                 }}
               >
-                <Icon as={FaMessage} />
+                <Icon as={FaMessage} boxSize={isMobileClient ? 3 : "unset"} />
               </motion.div>
               <MotionDiv
                 as={Link}
                 href="/"
                 className={twMerge(
-                  "clickable z-50 flex h-9 w-9 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent  hover:shadow-glow-button",
+                  "clickable z-50 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
                 )}
                 initial={{ opacity: 0 }}
                 animate={{
@@ -104,7 +123,7 @@ const Home = () => {
                   },
                 }}
               >
-                <Icon as={FaHome} />
+                <Icon as={FaHome} boxSize={isMobileClient ? 3 : "unset"} />
               </MotionDiv>
             </>
           )}

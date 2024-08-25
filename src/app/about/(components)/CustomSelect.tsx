@@ -40,12 +40,15 @@ const CustomSelectBox = ({
     };
   }, [wrapperRef]);
 
-  const handleSelect = (option: AllTechInterface) => {
+  const handleSelect = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    option: AllTechInterface,
+  ) => {
+    e.stopPropagation();
     setAttributeFilter(option);
     setIsOpen(false);
     setSelectedFlowHistory(selectedFlow);
     setSelectedFlow("");
-    setInfoOpen(false);
   };
 
   const handleClear = (e: React.MouseEvent<SVGElement, MouseEvent>) => {
@@ -86,7 +89,7 @@ const CustomSelectBox = ({
             <div
               key={index}
               className="clickable group h-fit p-2 text-accent hover:bg-neutral-900"
-              onClick={() => handleSelect(option)}
+              onClick={(e) => handleSelect(e, option)}
             >
               <div className="flex items-center gap-2 text-sm transition-all group-hover:ml-2">
                 <Icon as={option.icon.icon} color={option.icon.color} />

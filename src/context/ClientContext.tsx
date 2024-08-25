@@ -15,7 +15,7 @@ const ClientProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileClient(window.innerWidth < 1000);
+      setIsMobileClient(window.innerWidth < 650);
     };
 
     handleResize();

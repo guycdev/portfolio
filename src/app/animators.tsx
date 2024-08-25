@@ -33,9 +33,9 @@ const Animators = ({
         />
       )}
 
-      <div className="flex h-[100svh] overflow-hidden p-2">
+      <div className="flex h-[100svh] overflow-hidden sm:p-2">
         <motion.div
-          className="w-screen flex-col overflow-hidden rounded-border p-2.5"
+          className="w-screen flex-col overflow-hidden p-1 sm:rounded-border sm:p-2.5"
           initial={{
             /**@ts-ignore */
             "--color-start": "#0000000", // Initial start color of the gradient

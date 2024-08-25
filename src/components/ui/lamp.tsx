@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { Box } from "@chakra-ui/react";
+import { useClientContext } from "@/context/ClientContext";
 
 export function LampDemo() {
   const MotionBox = motion(Box);
@@ -76,19 +77,7 @@ export const LampContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  const [isMobileView, setIsMobileView] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth < 650);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const { isMobileClient } = useClientContext();
 
   return (
     <div
@@ -99,8 +88,11 @@ export const LampContainer = ({
     >
       <div className="relative isolate z-0 flex w-full flex-1 scale-y-125 items-center justify-center ">
         <motion.div
-          initial={{ opacity: 0.5, width: isMobileView ? "5rem" : "15rem" }}
-          whileInView={{ opacity: 1, width: isMobileView ? "15rem" : "30rem" }}
+          initial={{ opacity: 0.5, width: isMobileClient ? "5rem" : "15rem" }}
+          whileInView={{
+            opacity: 1,
+            width: isMobileClient ? "15rem" : "30rem",
+          }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -115,8 +107,11 @@ export const LampContainer = ({
           <div className="absolute  bottom-0 left-0 z-20 h-[100%]  w-40 bg-bg [mask-image:linear-gradient(to_right,white,transparent)]" />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0.5, width: isMobileView ? "5rem" : "15rem" }}
-          whileInView={{ opacity: 1, width: isMobileView ? "15rem" : "30rem" }}
+          initial={{ opacity: 0.5, width: isMobileClient ? "5rem" : "15rem" }}
+          whileInView={{
+            opacity: 1,
+            width: isMobileClient ? "15rem" : "30rem",
+          }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -134,8 +129,8 @@ export const LampContainer = ({
         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
         <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-lamp-glow opacity-50 blur-3xl"></div>
         <motion.div
-          initial={{ width: isMobileView ? "3rem" : "8rem" }}
-          whileInView={{ width: isMobileView ? "6rem" : "16rem" }}
+          initial={{ width: isMobileClient ? "3rem" : "8rem" }}
+          whileInView={{ width: isMobileClient ? "6rem" : "16rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -144,8 +139,8 @@ export const LampContainer = ({
           className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-bg blur-2xl"
         ></motion.div>
         <motion.div
-          initial={{ width: isMobileView ? "5rem" : "15rem" }}
-          whileInView={{ width: isMobileView ? "15rem" : "30rem" }}
+          initial={{ width: isMobileClient ? "5rem" : "15rem" }}
+          whileInView={{ width: isMobileClient ? "15rem" : "30rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
