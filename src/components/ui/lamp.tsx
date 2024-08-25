@@ -83,6 +83,8 @@ export const LampContainer = ({
       setIsMobileView(window.innerWidth < 650);
     };
 
+    handleResize();
+
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
