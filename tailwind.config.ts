@@ -39,6 +39,7 @@ const config: Config = {
       },
       animation: {
         "meteor-effect": "meteor 5s linear infinite",
+        fadeIn: "fadeIn 0.3s ease-in-out 1.2s forwards",
       },
       keyframes: {
         meteor: {
@@ -48,6 +49,10 @@ const config: Config = {
             transform: "rotate(215deg) translateX(-500px)",
             opacity: "0",
           },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
       borderRadius: {

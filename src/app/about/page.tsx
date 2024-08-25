@@ -16,6 +16,7 @@ import { TiThMenu } from "react-icons/ti";
 import { ContactForm } from "./(components)/form";
 import Link from "next/link";
 import { useClientContext } from "@/context/ClientContext";
+import { useRouter } from "next/navigation";
 
 const Home = () => {
   const [selectedFlow, setSelectedFlow] = useState<NodeType>("experiences");
@@ -26,9 +27,8 @@ const Home = () => {
 
   const reactFlow = useReactFlow();
 
-  const MotionDiv = motion(Box);
-
   const { isMobileClient } = useClientContext();
+  const router = useRouter();
 
   const nodes = useNodes();
 
@@ -63,68 +63,63 @@ const Home = () => {
               boxSize={isMobileClient ? 3 : "unset"}
             />
           </motion.div>
-          {!isInfoOpen && (
-            <>
-              <motion.div
-                className={twMerge(
-                  "clickable z-50 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:rotate-[360deg] hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
-                )}
-                onClick={() => {
-                  reactFlow.fitView({
-                    includeHiddenNodes: true,
-                    maxZoom: 0.75,
-                    nodes: [{ id: nodes[0].id }],
-                  });
-                }}
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: {
-                    delay: 0.6,
-                    duration: 0.3,
-                  },
-                }}
-              >
-                <Icon
-                  as={GrPowerReset}
-                  boxSize={isMobileClient ? 3 : "unset"}
-                />
-              </motion.div>
-              <motion.div
-                className={twMerge(
-                  "clickable z-50 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
-                )}
-                onClick={() => setIsModalOpen(true)}
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: {
-                    delay: 0.9,
-                    duration: 0.3,
-                  },
-                }}
-              >
-                <Icon as={FaMessage} boxSize={isMobileClient ? 3 : "unset"} />
-              </motion.div>
-              <MotionDiv
-                as={Link}
-                href="/"
-                className={twMerge(
-                  "clickable z-50 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
-                )}
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: {
-                    delay: 1.2,
-                    duration: 0.3,
-                  },
-                }}
-              >
-                <Icon as={FaHome} boxSize={isMobileClient ? 3 : "unset"} />
-              </MotionDiv>
-            </>
-          )}
+          <motion.div
+            className={twMerge(
+              "clickable z-50 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:rotate-[360deg] hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
+              isInfoOpen && "pointer-events-none !opacity-50",
+            )}
+            onClick={() => {
+              reactFlow.fitView({
+                includeHiddenNodes: true,
+                maxZoom: 0.75,
+                nodes: [{ id: nodes[0].id }],
+              });
+            }}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: {
+                delay: 0.6,
+                duration: 0.3,
+              },
+            }}
+          >
+            <Icon as={GrPowerReset} boxSize={isMobileClient ? 3 : "unset"} />
+          </motion.div>
+          <motion.div
+            className={twMerge(
+              "clickable z-50 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
+              isInfoOpen && "pointer-events-none !opacity-50",
+            )}
+            onClick={() => setIsModalOpen(true)}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: {
+                delay: 0.9,
+                duration: 0.3,
+              },
+            }}
+          >
+            <Icon as={FaMessage} boxSize={isMobileClient ? 3 : "unset"} />
+          </motion.div>
+          <motion.div
+            className={twMerge(
+              "clickable z-50 flex h-7 w-7 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent hover:shadow-glow-button sm:h-9  sm:w-9",
+              isInfoOpen && "pointer-events-none !opacity-50",
+            )}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: {
+                delay: 1.2,
+                duration: 0.3,
+              },
+            }}
+            onClick={() => router.push("/")}
+          >
+            <Icon as={FaHome} boxSize={isMobileClient ? 3 : "unset"} />
+          </motion.div>
         </div>
         <HomeInformation isOpen={isInfoOpen} setIsOpen={setIsInfoOpen} />
         <Flow />
