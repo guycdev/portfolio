@@ -118,9 +118,9 @@ export function ContactForm({ onClose }: { onClose: () => void }) {
             Submit &rarr;
             <BottomGradient />
           </button>
-          <div className="my-6 hidden h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700 sm:visible" />
+          <div className="my-6 hidden h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700 sm:block" />
           <div className="flex flex-row justify-between space-y-4 sm:flex-col sm:gap-0">
-            <p className="hidden max-w-sm text-center text-sm text-neutral-600 dark:text-neutral-300 sm:visible">
+            <p className="hidden max-w-sm text-center text-sm text-neutral-600 dark:text-neutral-300 sm:block">
               Or find me here!
             </p>
             <a
@@ -129,7 +129,7 @@ export function ContactForm({ onClose }: { onClose: () => void }) {
               className="clickable group/btn relative flex h-10 w-fit items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)] sm:w-full"
             >
               <PiLinkedinLogo className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:visible">
+              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:block">
                 LinkedIn
               </span>
               <BottomGradient />
@@ -140,7 +140,7 @@ export function ContactForm({ onClose }: { onClose: () => void }) {
               className="clickable group/btn relative flex h-10 w-fit items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)] sm:w-full"
             >
               <PiGithubLogo className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:visible">
+              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:block">
                 GitHub
               </span>
               <BottomGradient />
@@ -151,7 +151,7 @@ export function ContactForm({ onClose }: { onClose: () => void }) {
               className="clickable group/btn relative flex h-10 w-fit items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)] sm:w-full"
             >
               <PiTwitterLogo className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:visible">
+              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:block">
                 Twitter
               </span>
               <BottomGradient />
@@ -162,7 +162,7 @@ export function ContactForm({ onClose }: { onClose: () => void }) {
               className="clickable group/btn relative flex h-10 w-fit items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)] sm:w-full"
             >
               <SiDevpost className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:visible">
+              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:block">
                 Devpost
               </span>
               <BottomGradient />
