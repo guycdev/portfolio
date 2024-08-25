@@ -1,19 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Flow from "./(components)/Flow";
 import HomeInformation from "./(components)/HomeInformation";
 import { AllTechInterface, NodeType } from "@/utils/interfaces";
 import { SetFlowContext } from "@/context/SetFlowContext";
 import { useReactFlow } from "reactflow";
-import { Icon } from "@chakra-ui/react";
-import { FaInfo } from "react-icons/fa";
+import { Box, Icon } from "@chakra-ui/react";
+import { FaHome, FaInfo } from "react-icons/fa";
 import { FaMessage, FaX } from "react-icons/fa6";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
-import { GrCircleInformation, GrPowerReset } from "react-icons/gr";
+import { GrPowerReset } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
 import { ContactForm } from "./(components)/form";
+import Link from "next/link";
 
 const Home = () => {
   const [selectedFlow, setSelectedFlow] = useState<NodeType>("experiences");
@@ -23,6 +24,8 @@ const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const reactFlow = useReactFlow();
+
+  const MotionDiv = motion(Box);
 
   return (
     <SetFlowContext.Provider
@@ -86,6 +89,23 @@ const Home = () => {
               >
                 <Icon as={FaMessage} />
               </motion.div>
+              <MotionDiv
+                as={Link}
+                href="/"
+                className={twMerge(
+                  "clickable z-50 flex h-9 w-9 items-center justify-center rounded-full border-[1px] border-neutral-700 bg-accent text-bg transition duration-500 hover:border-accent hover:bg-bg hover:text-accent  hover:shadow-glow-button",
+                )}
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: {
+                    delay: 1.2,
+                    duration: 0.3,
+                  },
+                }}
+              >
+                <Icon as={FaHome} />
+              </MotionDiv>
             </>
           )}
         </div>

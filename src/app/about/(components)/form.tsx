@@ -3,10 +3,11 @@ import React, { useRef } from "react";
 import { Label } from "../../../components/ui/label";
 import { Input } from "../../../components/ui/input";
 import { cn } from "@/utils/cn";
-import { PiGithubLogo, PiLinkedinLogo } from "react-icons/pi";
+import { PiGithubLogo, PiLinkedinLogo, PiTwitterLogo } from "react-icons/pi";
 import { SiDevpost } from "react-icons/si";
 import emailjs from "@emailjs/browser";
 import { useToast } from "@chakra-ui/react";
+import { FaX } from "react-icons/fa6";
 
 export function ContactForm({ onClose }: { onClose: () => void }) {
   const formRef = useRef<null | HTMLFormElement>(null);
@@ -56,18 +57,22 @@ export function ContactForm({ onClose }: { onClose: () => void }) {
       onClick={onClose}
     >
       <div
-        className="h-fit max-w-md rounded-none border-[1px] border-neutral-700 bg-white p-4 shadow-input dark:bg-bg md:rounded-2xl md:p-8"
+        className="relative h-fit max-w-xs rounded-2xl border-[1px] border-neutral-700 bg-white p-4 shadow-input dark:bg-bg sm:max-w-md md:p-8"
         onClick={(e) => e.stopPropagation()}
         onDrag={(e) => e.stopPropagation()}
       >
+        <FaX
+          onClick={onClose}
+          className="visible absolute right-5 top-5 text-accent sm:hidden"
+        />
         <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
           Get in Touch
         </h2>
         <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-          Specializing in web development and always eager to tackle new
+          Specializing in full-stack development and always eager to tackle new
           challenges.
         </p>
-        <form className="mt-8" onSubmit={handleSubmit} ref={formRef}>
+        <form className="mt-4 md:mt-8" onSubmit={handleSubmit} ref={formRef}>
           <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
             <LabelInputContainer>
               <Label htmlFor="firstname">First name</Label>
@@ -113,18 +118,18 @@ export function ContactForm({ onClose }: { onClose: () => void }) {
             Submit &rarr;
             <BottomGradient />
           </button>
-          <div className="my-6 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
-          <div className="flex flex-col space-y-4">
-            <p className="max-w-sm text-center text-sm text-neutral-600 dark:text-neutral-300">
+          <div className="my-6 hidden h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700 sm:visible" />
+          <div className="flex flex-row justify-between space-y-4 sm:flex-col sm:gap-0">
+            <p className="hidden max-w-sm text-center text-sm text-neutral-600 dark:text-neutral-300 sm:visible">
               Or find me here!
             </p>
             <a
               href="https://www.linkedin.com/in/guy-cohen-96a6141ab/"
               target="_blank"
-              className="clickable group/btn relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
+              className="clickable group/btn relative flex h-10 w-fit items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)] sm:w-full"
             >
               <PiLinkedinLogo className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="text-sm text-neutral-700 dark:text-neutral-300">
+              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:visible">
                 LinkedIn
               </span>
               <BottomGradient />
@@ -132,21 +137,32 @@ export function ContactForm({ onClose }: { onClose: () => void }) {
             <a
               href="https://github.com/guycdev"
               target="_blank"
-              className="clickable group/btn relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
+              className="clickable group/btn relative flex h-10 w-fit items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)] sm:w-full"
             >
               <PiGithubLogo className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="text-sm text-neutral-700 dark:text-neutral-300">
+              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:visible">
                 GitHub
+              </span>
+              <BottomGradient />
+            </a>
+            <a
+              href="https://github.com/guycdev"
+              target="_blank"
+              className="clickable group/btn relative flex h-10 w-fit items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)] sm:w-full"
+            >
+              <PiTwitterLogo className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:visible">
+                Twitter
               </span>
               <BottomGradient />
             </a>
             <a
               href="https://devpost.com/gcWDev"
               target="_blank"
-              className="clickable group/btn relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
+              className="clickable group/btn relative flex h-10 w-fit items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)] sm:w-full"
             >
               <SiDevpost className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="text-sm text-neutral-700 dark:text-neutral-300">
+              <span className="hidden text-sm text-neutral-700 dark:text-neutral-300 sm:visible">
                 Devpost
               </span>
               <BottomGradient />
