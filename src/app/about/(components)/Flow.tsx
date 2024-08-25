@@ -44,11 +44,13 @@ function Flow() {
 
   useEffect(() => {
     setTimeout(() => {
-      reactFlow.fitView({
-        includeHiddenNodes: true,
-        maxZoom: 0.75,
-        nodes: [{ id: nodes[0].id }],
-      });
+      if (nodes.length > 0) {
+        reactFlow.fitView({
+          includeHiddenNodes: true,
+          maxZoom: 0.75,
+          nodes: [{ id: nodes[0].id }],
+        });
+      }
     }, 100);
   }, [attributeFilter, selectedFlow, reactFlow, nodes]);
 
