@@ -21,35 +21,12 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         {/* Favicon for most browsers */}
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* Favicon for iOS and Android */}
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
         <link
           rel="icon"
+          href="/icon?<generated>"
           type="image/png"
           sizes="32x32"
-          href="/favicon-32x32.png"
         />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-
-        {/* Manifest for web app information */}
-        <link rel="manifest" href="/site.webmanifest" />
-
-        {/* Safari pinned tab icon */}
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-
-        {/* Theme color for mobile browsers */}
-        <meta name="theme-color" content="#ffffff" />
       </Head>
       <body className={` bg-bg ${inter.className} dark overflow-hidden`}>
         <Providers>
