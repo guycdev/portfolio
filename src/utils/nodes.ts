@@ -1,12 +1,16 @@
-import { DiMysql, DiPython } from "react-icons/di";
-import { FaCss3, FaEthereum, FaHtml5, FaNode, FaReact } from "react-icons/fa";
-import { FiFigma } from "react-icons/fi";
+import { DiMysql } from "react-icons/di";
+import {
+  FaAws,
+  FaCss3,
+  FaHtml5,
+  FaJava,
+  FaNode,
+  FaReact,
+} from "react-icons/fa";
 import {
   SiAmazonec2,
-  SiAwslambda,
   SiExpress,
   SiGooglecloud,
-  SiGooglemaps,
   SiNextdotjs,
   SiOpenai,
   SiPowerbi,
@@ -15,10 +19,15 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
-import { BsFillNodePlusFill, BsMusicNote, BsPassport } from "react-icons/bs";
+import {
+  BsBootstrap,
+  BsFillNodePlusFill,
+  BsMusicNote,
+  BsPassport,
+} from "react-icons/bs";
 import convexSvg from "@/components/icons/convex-svg";
 import { As } from "@chakra-ui/react";
-import { TbBrandVite, TbShoe } from "react-icons/tb";
+import { TbAssembly, TbBrandDjango, TbBrandVite, TbShoe } from "react-icons/tb";
 import { SiSelenium } from "react-icons/si";
 import { AllTechInterface } from "./interfaces";
 import ZxSvg from "@/components/icons/zx-xvg";
@@ -99,6 +108,14 @@ const techIcons: { [key: string]: { icon: As; color: string } } = {
     icon: SiOpenai,
     color: "#10a481",
   },
+  Django: {
+    icon: TbBrandDjango,
+    color: "#ffffff",
+  },
+  Bootstrap: {
+    icon: BsBootstrap,
+    color: "#6c11ee",
+  },
   Vite: {
     icon: ViteSvg,
     color: "#9665fe",
@@ -126,28 +143,30 @@ const techIcons: { [key: string]: { icon: As; color: string } } = {
   R: { icon: SiRstudio, color: "#71a5d4" },
   PowerBI: { icon: SiPowerbi, color: "#eac210" },
   Tableau: { icon: SiTableau, color: "#e87830" },
-  "AWS Lambda": { icon: SiAwslambda, color: "#d16312" },
+  AWS: { icon: FaAws, color: "#d16312" },
+  Assembly: { icon: TbAssembly, color: "#4768b0" },
+  Java: { icon: FaJava, color: "#ee9517" },
 };
 
 const allNodes: PreformattedNodes[] = [
   {
-    id: "node-1",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
       title: "ZeroX Gaming",
       locationIcon: ZxSvg,
-      role: "Software Engineer Intern - Web3 Team",
-      date: "May 2024 - Present",
+      role: "Software Engineer Intern",
+      date: "Jan 2024 - Present",
       description:
-        "Developing an app store where users are able to interact with over 200+ applications and play in app games. Designed the frontend, backend, security, and CI/CD protocols neccessary to maintain the app.",
+        "Contributed fullstack development to the product team where I worked on the UI, API, security design, and CI/CD pipelines, of a virtual app store currently supporting 200+ games alongside in app mini games, and a SASS dashboard designed to abtrasct the complexities of blockchain for its users. ",
       stack: [
         "TypeScript",
         "React.js",
         "Node.js",
-        "AWS Lambda",
+        "AWS",
         "Vite",
         "Python",
+        "Django",
         "Figma",
       ],
       section: "experiences",
@@ -155,55 +174,54 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-2",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      title: "ZeroX Gaming",
-      locationIcon: ZxSvg,
-      role: "Software Engineer Intern - Web2 Team",
-      date: "Jan 2024 - Apr 2024",
+      title: "Analog Designs",
+      locationIcon: BsFillNodePlusFill,
+      role: "Freelance Design Studio",
+      date: "May 2023 - Dec 2023",
       description:
-        "Designed and implemented a SaaS dashboard with TypeScript, React, and Ethers.js. I also created a brand-specific Chakra UI style system, deployed on NPM and utilized across three applications.",
+        "Built 10+ custom web apps for various clients, including corporate sites, e-commerce, and charity pages, while optimizing SEO and mobile responsiveness with Google Lighthouse and Search Console.",
       stack: [
-        "TypeScript",
         "React.js",
         "Node.js",
-        "AWS Lambda",
-        "Ethers.js",
+        "JavaScript",
+        "MySQL",
         "Vite",
-        "Python",
-        "Selenium",
-        "Figma",
+        "CSS",
+        "Express.js",
+        "Passport.js",
+        "AWS",
       ],
       section: "experiences",
       tag: "Experience",
+      github: "https://github.com/guycdev/Analog-Designs",
     },
   },
   {
-    id: "node-3",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      title: "Oregon State University",
-      locationIcon: OsuSvg,
-      role: "Bachelor of Science in Computer Science",
-      date: "Sept 2023 - Mar 2025",
+      title: "SNKRS Solutions",
+      locationIcon: TbShoe,
+      role: "Retail Arbitrage",
+      date: "Apr 2020 - Sep 2022",
       description:
-        "Maintaining a 4.0 CGPA while learning about the theoretical foundations of computer science, including algorithms, data structures, computation theory, and software development principles.",
-      stack: ["HTML", "CSS", "React.js", "Express.js", "Node.js", "Python"],
-      section: "education",
-      tag: "Education",
+        "Built 20+ Python monitors and automation tools with Requests and Selenium for a retail arbitrage strategy through selling scrapers to 15+ business partners and products to B2B partners.",
+      stack: ["Python", "Selenium", "Google Cloud"],
+      section: "experiences",
+      tag: "Experience",
+      github: "https://github.com/guycdev/snkrs_solutions_suite",
     },
   },
   {
-    id: "node-4",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      title: "2nd Place Hackathon Winner",
+      role: "2nd Place - Beaverhacks 2024",
       locationIcon: OsuSvg,
-      role: "BeatBytes - Beaverhacks Winter 2024",
+      title: "BeatBytes",
       date: "Mar 2024",
       description:
         "Beatbytes is a free to use audio production application that provides its users with maximum flexibility by offering file uploads and instrumental configruations.",
@@ -214,13 +232,12 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-5",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      role: "Outbreak Navigator - Google Hacks x Beaverhacks",
+      role: "1st Place - Google Hacks 2023",
       locationIcon: GoogleSvg,
-      title: "1st Place Hackathon Winner",
+      title: "Outbreak Navigator",
       date: "Nov 2023",
       description:
         "Outbreak Navigator, is a real-time, crowdsourced map app to safely locate essentials and steer clear of danger zones in crises.",
@@ -238,13 +255,12 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-6",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      role: "HFT Bot - Ryerson RIT Competition",
+      role: "1st Place - Ryerson RIT Competition",
       locationIcon: RyersonSvg,
-      title: "1st Place Hackathon Winner",
+      title: "HFT Bot",
       date: "Jan 2023 - Apr 2023",
       description:
         "Developed a high-frequency trading bot in Python using the OpenAI's API, regex, and cross trading strategies to facilitate a sentiment driven strategy.",
@@ -255,69 +271,46 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-7",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      title: "Image Search",
-      locationIcon: BiNetworkChart,
-      role: "AI generated image search engine",
-      date: "Mar 2024",
+      title: "ClassCircles",
+      locationIcon: OsuSvg,
+      role: "Runnerup - Beahverhacks 2023",
+      date: "Oct 2023",
       description:
-        "Image search is an image search engine designed for AI generated images using a stable difusion model. Users are able to create an account and favorite their favorite images while also analyzing the keywords used to generate the image.",
-      stack: ["TypeScript", "React.js", "Next.js", "Convex"],
+        "ClassCircles is your one-stop platform for finding campus groups that resonate with your interests. Users input their school and major and are able to find social groups with similar interests.",
+      stack: ["JavaScript", "React.js", "Node.js", "Express.js", "Bootstrap"],
       section: "projects",
       tag: "Project",
-      github: "https://github.com/guycdev/image-search",
+      github: "https://github.com/guycdev/ClassCircles",
     },
   },
   {
-    id: "node-8",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
-      title: "Analog Designs",
-      locationIcon: BsFillNodePlusFill,
-      role: "Freelance Design Studio",
-      date: "May 2023 - Dec 2023",
+      title: "Oregon State University",
+      locationIcon: OsuSvg,
+      role: "Bachelor of Science in Computer Science",
+      date: "Sept 2023 - Mar 2025",
       description:
-        "Delivered 10 custom web applications for diverse clients using React, CSS, WordPress, and Framer, while optimizing SEO and mobile responsiveness, resulting in over 2000 monthly visits and a 3% conversion rate.",
+        "Maintaining a 4.0 GPA while learning about the theoretical foundations of computer science, including algorithms, data structures, computer architecture, and software development principles.",
       stack: [
-        "React.js",
-        "Node.js",
-        "JavaScript",
-        "MySQL",
-        "Vite",
+        "Assembly",
+        "Java",
+        "Python",
+        "HTML",
         "CSS",
+        "React.js",
         "Express.js",
-        "Passport.js",
-        "AWS EC2",
+        "Node.js",
       ],
-      section: "experiences",
-      tag: "Experience",
-      github: "https://github.com/guycdev/Analog-Designs",
+      section: "education",
+      tag: "Education",
     },
   },
   {
-    id: "node-9",
-    type: "node",
-    position: { x: 0, y: 0 },
-    data: {
-      title: "SNKRS Solutions",
-      locationIcon: TbShoe,
-      role: "Retail Arbitrage",
-      date: "Apr 2020 - Sep 2022",
-      description:
-        "Built 20+ Python monitors and automation tools with Requests and Selenium for a retail arbitrage strategy through selling scrapers to 15+ business partners and products to B2B partners.",
-      stack: ["Python", "Selenium", "Google Cloud"],
-      section: "experiences",
-      tag: "Experience",
-      github: "https://github.com/guycdev/snkrs_solutions_suite",
-    },
-  },
-
-  {
-    id: "node-10",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -333,7 +326,6 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-11",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -349,7 +341,6 @@ const allNodes: PreformattedNodes[] = [
     },
   },
   {
-    id: "node-12",
     type: "node",
     position: { x: 0, y: 0 },
     data: {
@@ -364,7 +355,9 @@ const allNodes: PreformattedNodes[] = [
       tag: "Involvement",
     },
   },
-];
+].map((node, index) => {
+  return { ...node, id: `node-${index + 1}` } as PreformattedNodes;
+});
 
 const formatNodesStack = (nodes: PreformattedNodes[]) => {
   return nodes.map((node) => {
